@@ -8,7 +8,10 @@ DEPDIR := ./build/deps
 BINDIR := .
 TARGET := $(BINDIR)/$(subst $(space),_,$(shell basename "${PWD}")).exe
 
+MY_PATHS := $(BINDIR) $(INCDIR)
+
 ###### extra variables #######
+MY_PATHS += $(shell cat .my_paths 2>/dev/null)
 
 ###### complier set-up ######
 CC = gcc
@@ -19,26 +22,34 @@ LD = g++
 LDFLAGS = $(CXXFLAGS)
 DEBUGGER = gdb
 
-ifdef RELEASE
-	maketype := RELEASE
+maketype :=
+
+ifeq ($(GTK), 1)
+	maketype += GTK
+	CFLAGS += $(shell pkg-config --cflags --libs gtk+-3.0) -rdynamic
+endif
+
+ifeq ($(THREADS), 1)
+	maketype += THREADS
+	CFLAGS += -pthread
+endif
+
+ifeq ($(RELEASE), 1)
+	maketype += RELEASE
 	CFLAGS += -O3 -march=native
 	CXXFLAGS += -std=c++17
 	LDFLAGS += -flto=full
-else ifdef DEBUG
-	maketype := DEBUG
+else ifeq ($(DEBUG), 1)
+	maketype += DEBUG
 	CFLAGS += -O0 -g
-else ifdef THREADS
-	maketype := THREADS
-	CFLAGS += -O2 -march=native -pthread
-	CXXFLAGS += -std=c++17
-	LDFLAGS += -flto=full
 else
-	maketype := NORMAL
+	maketype += NORMAL
 	CFLAGS += -O0
 	CXXFLAGS += -O0 -std=c++14
 endif
 
-OUTPUT_OPTION = -I $(INCDIR) -I $(SRCDIR) -I $(BINDIR) -MMD -MP
+OUTPUT_OPTION := -MMD -MP -I $(SRCDIR)
+OUTPUT_OPTION += $(foreach i,$(MY_PATHS),-I $(i))
 
 SRCS := $(wildcard $(SRCDIR)/**/*.cpp)
 SRCS += $(wildcard $(SRCDIR)/*.cpp)
@@ -56,7 +67,7 @@ init :
 	@mkdir -p $(SRCDIR) $(INCDIR) $(OBJDIR) $(DEPDIR)
 	-@for i in $(wildcard *.cpp) $(wildcard *.c) $(wildcard *.tpp); do mv ./$$i $(SRCDIR)/$$i; done
 	-@for i in $(wildcard *.h); do mv ./$$i $(INCDIR)/$$i; done
-	-@echo -e "-DDEBUG\n-I../$(BINDIR)\n-I../$(INCDIR)" >| src/.clang_complete
+	-@echo -e "-DDEBUG$(foreach i,$(MY_PATHS),\n-I../$(i))" >| src/.clang_complete
 	-@cp /home/ahmed/opt/compile_and_run.sh ./
 
 $(TARGET): $(OBJS)
