@@ -1,11 +1,10 @@
 #include "Topology.h"
 
+void Topology::clear() {}
+
 Topology::Topology(const string &ID) : id(ID) {}
 
-Topology::~Topology() {
-  for (auto &it : components)
-    delete it.second;
-}
+Topology::~Topology() {}
 
 void Topology::print_attribute(ostream &s, int spaces, const string &name,
                                const string &attr) const {
@@ -19,7 +18,7 @@ void Topology::print_components(ostream &s, int spaces) const {
   int size = components.size();
   spaces += 2;
   for (auto &it : components) {
-    it.second->print(s, spaces);
+    it->print(s, spaces);
     if (--size)
       s << ',';
     s << '\n';
