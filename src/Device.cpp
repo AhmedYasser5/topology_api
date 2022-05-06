@@ -42,7 +42,7 @@ void Device::print_netlist(ostream &s, int spaces) const {
     } else
       s << ",\n";
     print_spaces(s, spaces);
-    s << "\"" << it.second << "\": \"" << it.first << "\"";
+    s << "\"" << it.first << "\": \"" << it.second << "\"";
   }
   spaces -= 2;
   s << "\n";
