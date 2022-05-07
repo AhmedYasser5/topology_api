@@ -22,7 +22,7 @@ protected:
   friend class TopologyAPI;
 
 public:
-  Device(const string &ID, const string &TYPE);
+  Device(const string &TYPE);
   virtual ~Device();
   virtual void print(ostream &s, int spaces = 0) const;
 };

@@ -1,7 +1,6 @@
 #include "Device.h"
 
-Device::Device(const string &ID, const string &TYPE)
-    : Topology(ID), type(TYPE) {}
+Device::Device(const string &TYPE) : Topology("null"), type(TYPE) {}
 
 Device::~Device() {}
 
