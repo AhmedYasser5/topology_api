@@ -2,11 +2,15 @@
 
 #include "Device.h"
 #include "Topology.h"
+#include <fstream>
 #include <memory>
+#include <nlohmann/json.hpp>
 #include <string>
 #include <unordered_map>
 #include <vector>
 
+using json = nlohmann::json;
+using std::ifstream;
 using std::shared_ptr;
 using std::string;
 using std::unordered_map;
@@ -20,6 +24,9 @@ private:
     topologyNetlists(Topology *ptr);
   };
   unordered_map<string, topologyNetlists> tops;
+
+  bool readQuoted(ifstream &inFile, string &str);
+  shared_ptr<Topology> readData(ifstream &inFile);
 
 public:
   bool readJSON(const string &FileName);
