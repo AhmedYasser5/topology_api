@@ -12,6 +12,7 @@ MY_PATHS := $(BINDIR) $(INCDIR)
 
 ###### extra variables #######
 MY_PATHS += $(shell cat .my_paths 2>/dev/null)
+MY_FLAGS := $(shell cat .my_flags 2>/dev/null)
 
 ###### complier set-up ######
 CC = gcc
@@ -47,6 +48,8 @@ else
 	CFLAGS += -O0
 	CXXFLAGS += -O0 -std=c++14
 endif
+
+CFLAGS += $(shell $(MY_FLAGS))
 
 OUTPUT_OPTION := -MMD -MP -I $(SRCDIR)
 OUTPUT_OPTION += $(foreach i,$(MY_PATHS),-I $(i))
