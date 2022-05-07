@@ -1,61 +1,135 @@
 #include "API.h"
-#include <stack>
 
+using std::getline;
 using std::ofstream;
-using std::stack;
+using std::static_pointer_cast;
 
-TopologyAPI::topologyNetlists::topologyNetlists(Topology *ptr) : top(ptr) {}
-
-bool TopologyAPI::readQuoted(ifstream &inFile, string &str) {
+bool TopologyAPI::readAttribute(ifstream &inFile, const string &str,
+                                shared_ptr<Topology> &top,
+                                shared_ptr<Device> &dev, bool &isDevice) {
   char current;
-  while (inFile.get(current)) {
-    if (current == '"')
-      return true;
-    str += current;
-  }
-  return false;
+  inFile >> current;
+  string val;
+  if (!getline(inFile, val, '"'))
+    return false;
+  if (isDevice)
+    dev->id = val;
+  else if (str == "type") {
+    dev = shared_ptr<Device>(new Device(val));
+    top = dev;
+    isDevice = true;
+  } else
+    top = shared_ptr<Topology>(new Topology(val));
+  return true;
+}
+
+bool TopologyAPI::readComponents(ifstream &inFile, shared_ptr<Topology> &top) {
+  char current;
+  inFile >> current;
+  if (current != '[')
+    return false;
+  do {
+    top->components.emplace_back(readData(inFile));
+    if (top->components.back() == NULL)
+      return false;
+    inFile >> current;
+  } while (current == ',');
+
+  return current == ']';
+}
+
+bool TopologyAPI::readPropertiesAndNetlists(ifstream &inFile, const string &str,
+                                            shared_ptr<Device> &dev) {
+  char current;
+  inFile >> current;
+  if (current != '{')
+    return false;
+
+  if (str != "netlist")
+    dev->properties.emplace_back(str, vector<pair<string, string>>());
+
+  do {
+    inFile >> current;
+
+    string prop;
+    if (!getline(inFile, prop, '"'))
+      return false;
+
+    inFile >> current >> current;
+    string val;
+    if (str == "netlist") {
+      if (!getline(inFile, val, '"'))
+        return false;
+      dev->netlist.emplace_back(prop, val);
+
+      inFile >> current;
+    } else {
+      do {
+        val += current;
+        inFile >> current;
+      } while (current != ',' && current != '}');
+
+      dev->properties.back().second.emplace_back(prop, val);
+    }
+
+  } while (current == ',');
+
+  return current == '}';
 }
 
 shared_ptr<Topology> TopologyAPI::readData(ifstream &inFile) {
-  // Each opening and closing of [] and {} pairs follow each other in the ASCII
-  // table with a difference of 2
   char current;
   inFile >> current;
   if (current != '{')
     return NULL;
-  stack<char> openedBrackets;
-  openedBrackets.push(current);
   shared_ptr<Topology> top = NULL;
-  string tmp;
-  while (!openedBrackets.empty()) {
-    inFile >> current;
-    if (!inFile.good())
-      return NULL;
-    if (current == '"') {
-      string str;
-      if (!readQuoted(inFile, str))
-        return NULL;
-      if (str == "id" || str == "type") {
+  shared_ptr<Device> dev = NULL;
+  bool isDevice = false;
 
-      } else if () {
-      }
-    } else if (current == ']' && current == openedBrackets.top())
+  while (inFile.good()) {
+    inFile >> current;
+    string str;
+    if (!getline(inFile, str, '"'))
+      return NULL;
+    inFile >> current;
+
+    bool failed;
+    if (str == "id" || str == "type")
+      failed = !readAttribute(inFile, str, top, dev, isDevice);
+    else if (str == "components")
+      failed = !readComponents(inFile, top);
+    else if (isDevice)
+      failed = !readPropertiesAndNetlists(inFile, str, dev);
+    else
+      failed = true;
+    if (failed)
+      return NULL;
+
+    inFile >> current;
+    if (current == '}')
+      return top;
   }
+
+  return NULL;
 }
 
 bool TopologyAPI::readJSON(const string &FileName) {
   ifstream inFile(FileName);
   if (!inFile.good())
     return false;
-  shared_ptr<Topology> top = readData(inFile);
-  if (top == NULL || tops.find(id) != tops.end())
+
+  shared_ptr<Topology> top(readData(inFile));
+  if (top == NULL || tops.find(top->id) != tops.end())
     return false;
-  tops.emplace(top->id, top);
+
   topologyNetlists &topnet = tops[top->id];
-  for (const shared_ptr<const Device> &dev : top->components) {
+  topnet.top = top;
+  for (shared_ptr<Topology> devtop : top->components) {
+    shared_ptr<Device> dev = static_pointer_cast<Device>(devtop);
     for (auto &it : dev->netlist)
       topnet.net2dev[it.second].emplace_back(dev);
   }
+
   return true;
 }
 
@@ -63,20 +137,54 @@ bool TopologyAPI::writeJSON(const string &TopologyID) const {
   auto it = tops.find(TopologyID);
   if (it == tops.end())
     return false;
+
   ofstream outFile(TopologyID + ".json");
   if (!outFile.good())
     return false;
+
   it->second.top->print(outFile);
   return true;
 }
 
-vector<shared_ptr<Topology>> TopologyAPI::queryTopologies() const {}
+vector<shared_ptr<Topology>> TopologyAPI::queryTopologies() const {
+  vector<shared_ptr<Topology>> ret;
+  for (auto &it : tops)
+    ret.emplace_back(it.second.top);
+  return ret;
+}
 
-bool TopologyAPI::deleteTopology(const string &TopologyID) {}
+bool TopologyAPI::deleteTopology(const string &TopologyID) {
+  auto it = tops.find(TopologyID);
+  if (it == tops.end())
+    return false;
+
+  tops.erase(it);
+  return true;
+}
 
 vector<shared_ptr<Device>>
-TopologyAPI::queryDevices(const string &TopologyID) const {}
+TopologyAPI::queryDevices(const string &TopologyID) const {
+  vector<shared_ptr<Device>> ret;
+
+  auto top = tops.find(TopologyID);
+  if (top == tops.end())
+    return ret;
+
+  for (auto &it : top->second.top->components)
+    ret.emplace_back(static_pointer_cast<Device>(it));
+  return ret;
+}
 
 vector<shared_ptr<Device>>
 TopologyAPI::queryDevicesWithNetlistNode(const string &TopologyID,
-                                         const string &NetlistNodeID) const {}
+                                         const string &NetlistNodeID) const {
+  auto it = tops.find(TopologyID);
+  if (it == tops.end())
+    return vector<shared_ptr<Device>>();
+
+  auto net = it->second.net2dev.find(NetlistNodeID);
+  if (net == it->second.net2dev.end())
+    return vector<shared_ptr<Device>>();
+
+  return net->second;
+}
