@@ -1,5 +1,7 @@
 #include "Device.h"
 
+using namespace topology;
+
 Device::Device(const string &TYPE) : Topology("null"), type(TYPE) {}
 
 Device::~Device() {}

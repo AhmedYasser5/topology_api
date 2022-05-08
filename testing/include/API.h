@@ -8,6 +8,8 @@
 #include <unordered_map>
 #include <vector>
 
+namespace topology {
+
 using std::ifstream;
 using std::shared_ptr;
 using std::string;
@@ -15,13 +17,17 @@ using std::unordered_map;
 using std::vector;
 
 class TopologyAPI {
-private:
-  struct topologyNetlists {
+protected:
+  class topologyNetlists {
+  public:
     shared_ptr<Topology> top;
     unordered_map<string, vector<shared_ptr<Device>>> net2dev;
+
+    void insertNetlists();
   };
   unordered_map<string, topologyNetlists> tops;
 
+private:
   bool readAttribute(ifstream &inFile, const string &str,
                      shared_ptr<Topology> &top, shared_ptr<Device> &dev,
                      bool &isDevice);
@@ -40,3 +46,5 @@ public:
   queryDevicesWithNetlistNode(const string &TopologyID,
                               const string &NetlistNodeID) const;
 };
+
+} // namespace topology

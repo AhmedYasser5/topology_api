@@ -1,5 +1,7 @@
 #include "Topology.h"
 
+using namespace topology;
+
 Topology::Topology(const string &ID) : id(ID) {}
 
 Topology::~Topology() {}

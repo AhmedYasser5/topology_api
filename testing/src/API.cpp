@@ -1,8 +1,18 @@
 #include "API.h"
 
+using namespace topology;
 using std::getline;
 using std::ofstream;
 using std::static_pointer_cast;
+
+void TopologyAPI::topologyNetlists::insertNetlists() {
+  for (const shared_ptr<Topology> &devtop : top->components) {
+    shared_ptr<Device> dev = static_pointer_cast<Device>(devtop);
+
+    for (const pair<string, string> &it : dev->netlist)
+      net2dev[it.second].emplace_back(dev);
+  }
+}
 
 bool TopologyAPI::readAttribute(ifstream &inFile, const string &str,
                                 shared_ptr<Topology> &top,
@@ -124,11 +134,7 @@ bool TopologyAPI::readJSON(const string &FileName) {
 
   topologyNetlists &topnet = tops[top->id];
   topnet.top = top;
-  for (const shared_ptr<Topology> &devtop : top->components) {
-    shared_ptr<Device> dev = static_pointer_cast<Device>(devtop);
-    for (const pair<string, string> &it : dev->netlist)
-      topnet.net2dev[it.second].emplace_back(dev);
-  }
+  topnet.insertNetlists();
 
   return true;
 }

@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+namespace topology {
+
 using std::ostream;
 using std::shared_ptr;
 using std::string;
@@ -27,3 +29,5 @@ public:
   virtual ~Topology();
   virtual void print(ostream &s, int spaces = 0) const;
 };
+
+} // namespace topology
