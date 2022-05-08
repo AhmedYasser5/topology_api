@@ -1,6 +1,11 @@
-#include "API.h"
+#include "testing.h"
 #include <iostream>
 
 using namespace std;
+using namespace topology;
 
-int main() { return 0; }
+int main() {
+  TopologyTest test;
+  test.testAll();
+  return 0;
+}
