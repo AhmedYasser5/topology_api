@@ -23,7 +23,7 @@ protected:
     shared_ptr<Topology> top;
     unordered_map<string, vector<shared_ptr<Device>>> net2dev;
 
-    void insertNetlist(const shared_ptr<Device> &dev);
+    void insertNetlists();
   };
   unordered_map<string, topologyNetlists> tops;
 
