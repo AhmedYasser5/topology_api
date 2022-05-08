@@ -19,12 +19,14 @@ int main() {
     it->print(cout);
     cout << endl;
   }
+  cout << endl;
   auto vecd = api.queryDevices("top2");
   for (auto &it : vecd) {
     it->print(cout);
     cout << endl;
   }
-  auto vecn = api.queryDevicesWithNetlistNode("top2", "vdd");
+  cout << endl;
+  auto vecn = api.queryDevicesWithNetlistNode("top2", "n1");
   for (auto &it : vecn) {
     it->print(cout);
     cout << endl;
