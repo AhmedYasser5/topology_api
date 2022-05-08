@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="4086941467">
+        <error id="preprocessorErrorDirective" severity="error" msg="failed to evaluate #if condition, division/modulo by zero" verbose="failed to evaluate #if condition, division/modulo by zero">
+            <location file="/usr/include/c++/11.2.0/ext/numeric_traits.h" line="112" column="0"/>
+        </error>
+</analyzerinfo>

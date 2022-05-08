@@ -1,0 +1,24 @@
+Checking src/API.cpp ...
+Defines:
+Undefines:
+Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Platform:unix64
+1/4 files checked 59% done
+Checking src/Device.cpp ...
+Defines:
+Undefines:
+Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Platform:unix64
+2/4 files checked 79% done
+Checking src/Topology.cpp ...
+Defines:
+Undefines:
+Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Platform:unix64
+3/4 files checked 91% done
+Checking src/main.cpp ...
+Defines:
+Undefines:
+Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Platform:unix64
+4/4 files checked 100% done
