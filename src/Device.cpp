@@ -1,17 +1,19 @@
 #include "Device.h"
 
+using namespace topology;
+
 Device::Device(const string &TYPE) : Topology("null"), type(TYPE) {}
 
 Device::~Device() {}
 
 void Device::print_properties(ostream &s, int spaces) const {
   int size = properties.size();
-  for (auto &it : properties) {
+  for (const pair<string, vector<pair<string, string>>> &it : properties) {
     print_spaces(s, spaces);
     s << "\"" << it.first << "\": ";
     spaces += 2;
     bool pfirst = true;
-    for (auto &p : it.second) {
+    for (const pair<string, string> &p : it.second) {
       if (pfirst) {
         pfirst = false;
         s << "{\n";
@@ -34,7 +36,7 @@ void Device::print_netlist(ostream &s, int spaces) const {
   s << "\"netlist\": ";
   spaces += 2;
   bool nfirst = true;
-  for (auto &it : netlist) {
+  for (const pair<string, string> &it : netlist) {
     if (nfirst) {
       nfirst = false;
       s << "{\n";

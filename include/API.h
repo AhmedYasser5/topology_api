@@ -8,6 +8,8 @@
 #include <unordered_map>
 #include <vector>
 
+namespace topology {
+
 using std::ifstream;
 using std::shared_ptr;
 using std::string;
@@ -40,3 +42,5 @@ public:
   queryDevicesWithNetlistNode(const string &TopologyID,
                               const string &NetlistNodeID) const;
 };
+
+} // namespace topology

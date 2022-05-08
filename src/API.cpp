@@ -1,5 +1,6 @@
 #include "API.h"
 
+using namespace topology;
 using std::getline;
 using std::ofstream;
 using std::static_pointer_cast;
@@ -124,9 +125,9 @@ bool TopologyAPI::readJSON(const string &FileName) {
 
   topologyNetlists &topnet = tops[top->id];
   topnet.top = top;
-  for (shared_ptr<Topology> devtop : top->components) {
+  for (const shared_ptr<Topology> &devtop : top->components) {
     shared_ptr<Device> dev = static_pointer_cast<Device>(devtop);
-    for (auto &it : dev->netlist)
+    for (const pair<string, string> &it : dev->netlist)
       topnet.net2dev[it.second].emplace_back(dev);
   }
 
@@ -134,7 +135,8 @@ bool TopologyAPI::readJSON(const string &FileName) {
 }
 
 bool TopologyAPI::writeJSON(const string &TopologyID) const {
-  auto it = tops.find(TopologyID);
+  unordered_map<string, topologyNetlists>::const_iterator it =
+      tops.find(TopologyID);
   if (it == tops.end())
     return false;
 
@@ -148,13 +150,14 @@ bool TopologyAPI::writeJSON(const string &TopologyID) const {
 
 vector<shared_ptr<Topology>> TopologyAPI::queryTopologies() const {
   vector<shared_ptr<Topology>> ret;
-  for (auto &it : tops)
+  for (const pair<string, topologyNetlists> &it : tops)
     ret.emplace_back(it.second.top);
   return ret;
 }
 
 bool TopologyAPI::deleteTopology(const string &TopologyID) {
-  auto it = tops.find(TopologyID);
+  unordered_map<string, topologyNetlists>::const_iterator it =
+      tops.find(TopologyID);
   if (it == tops.end())
     return false;
 
@@ -166,11 +169,12 @@ vector<shared_ptr<Device>>
 TopologyAPI::queryDevices(const string &TopologyID) const {
   vector<shared_ptr<Device>> ret;
 
-  auto top = tops.find(TopologyID);
+  unordered_map<string, topologyNetlists>::const_iterator top =
+      tops.find(TopologyID);
   if (top == tops.end())
     return ret;
 
-  for (auto &it : top->second.top->components)
+  for (const shared_ptr<Topology> &it : top->second.top->components)
     ret.emplace_back(static_pointer_cast<Device>(it));
   return ret;
 }
@@ -178,11 +182,13 @@ TopologyAPI::queryDevices(const string &TopologyID) const {
 vector<shared_ptr<Device>>
 TopologyAPI::queryDevicesWithNetlistNode(const string &TopologyID,
                                          const string &NetlistNodeID) const {
-  auto it = tops.find(TopologyID);
+  unordered_map<string, topologyNetlists>::const_iterator it =
+      tops.find(TopologyID);
   if (it == tops.end())
     return vector<shared_ptr<Device>>();
 
-  auto net = it->second.net2dev.find(NetlistNodeID);
+  unordered_map<string, vector<shared_ptr<Device>>>::const_iterator net =
+      it->second.net2dev.find(NetlistNodeID);
   if (net == it->second.net2dev.end())
     return vector<shared_ptr<Device>>();
 

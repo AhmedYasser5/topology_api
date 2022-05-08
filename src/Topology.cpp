@@ -1,6 +1,6 @@
 #include "Topology.h"
 
-void Topology::clear() {}
+using namespace topology;
 
 Topology::Topology(const string &ID) : id(ID) {}
 
@@ -17,7 +17,7 @@ void Topology::print_components(ostream &s, int spaces) const {
   s << "\"components\": [\n";
   int size = components.size();
   spaces += 2;
-  for (auto &it : components) {
+  for (const shared_ptr<Topology> &it : components) {
     it->print(s, spaces);
     if (--size)
       s << ',';

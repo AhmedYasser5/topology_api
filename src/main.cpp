@@ -3,6 +3,7 @@
 #include <memory>
 
 using namespace std;
+using topology::TopologyAPI;
 
 int main() {
   TopologyAPI api;
