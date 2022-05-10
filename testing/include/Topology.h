@@ -23,6 +23,7 @@ protected:
   void print_spaces(ostream &s, int spaces) const;
 
   friend class TopologyAPI;
+  friend class TopologyTest;
 
 public:
   Topology(const string &ID);
