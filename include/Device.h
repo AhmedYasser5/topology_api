@@ -22,6 +22,7 @@ protected:
   void print_netlist(ostream &s, int spaces) const;
 
   friend class TopologyAPI;
+  friend class TopologyTest;
 
 public:
   Device(const string &TYPE);
