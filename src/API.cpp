@@ -10,7 +10,7 @@ void TopologyAPI::topologyNetlists::insertNetlists() {
     shared_ptr<Device> dev = static_pointer_cast<Device>(devtop);
 
     for (const pair<string, string> &it : dev->netlist)
-      net2dev[it.second].emplace_back(dev);
+      net2dev[it.second].insert(dev);
   }
 }
 
@@ -192,10 +192,10 @@ TopologyAPI::queryDevicesWithNetlistNode(const string &TopologyID,
   if (it == tops.end())
     return vector<shared_ptr<Device>>();
 
-  unordered_map<string, vector<shared_ptr<Device>>>::const_iterator net =
+  unordered_map<string, unordered_set<shared_ptr<Device>>>::const_iterator net =
       it->second.net2dev.find(NetlistNodeID);
   if (net == it->second.net2dev.end())
     return vector<shared_ptr<Device>>();
 
-  return net->second;
+  return vector<shared_ptr<Device>>(net->second.begin(), net->second.end());
 }
