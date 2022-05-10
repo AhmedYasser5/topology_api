@@ -1,24 +1,26 @@
 Checking src/API.cpp ...
 Defines:
 Undefines:
-Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Includes: -Iinclude/
 Platform:unix64
 1/4 files checked 59% done
 Checking src/Device.cpp ...
 Defines:
 Undefines:
-Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Includes: -Iinclude/
 Platform:unix64
-2/4 files checked 79% done
+2/4 files checked 78% done
 Checking src/Topology.cpp ...
 Defines:
 Undefines:
-Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Includes: -Iinclude/
 Platform:unix64
 3/4 files checked 91% done
 Checking src/main.cpp ...
 Defines:
 Undefines:
-Includes: -Iinclude/ -I/usr/include/ -I/usr/include/gnu/ -I/usr/include/c++/11.2.0/ -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu/
+Includes: -Iinclude/
 Platform:unix64
 4/4 files checked 100% done
+nofile:0:0: information: Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project's include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config. [missingIncludeSystem]
+

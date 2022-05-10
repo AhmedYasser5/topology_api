@@ -1,6 +1,56 @@
 <?xml version="1.0"?>
-<analyzerinfo checksum="4086941467">
-        <error id="preprocessorErrorDirective" severity="error" msg="failed to evaluate #if condition, division/modulo by zero" verbose="failed to evaluate #if condition, division/modulo by zero">
-            <location file="/usr/include/c++/11.2.0/ext/numeric_traits.h" line="112" column="0"/>
-        </error>
+<analyzerinfo checksum="531823849">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="insertNetlists" lineNumber="8"/>
+    <functiondecl functionName="queryTopologies" lineNumber="156"/>
+    <functioncall functionName="Device"/>
+    <functioncall functionName="FileName"/>
+    <functioncall functionName="NULL"/>
+    <functioncall functionName="NetlistNodeID"/>
+    <functioncall functionName="Topology"/>
+    <functioncall functionName="TopologyID"/>
+    <functioncall functionName="back"/>
+    <functioncall functionName="begin"/>
+    <functioncall functionName="components"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="dev"/>
+    <functioncall functionName="devtop"/>
+    <functioncall functionName="emplace_back"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="erase"/>
+    <functioncall functionName="failed"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="find"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="getline"/>
+    <functioncall functionName="good"/>
+    <functioncall functionName="id"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="inFile"/>
+    <functioncall functionName="insert"/>
+    <functioncall functionName="insertNetlists"/>
+    <functioncall functionName="isDevice"/>
+    <functioncall functionName="it"/>
+    <functioncall functionName="netlist"/>
+    <functioncall functionName="outFile"/>
+    <functioncall functionName="pair"/>
+    <functioncall functionName="print"/>
+    <functioncall functionName="prop"/>
+    <functioncall functionName="readAttribute"/>
+    <functioncall functionName="readComponents"/>
+    <functioncall functionName="readData"/>
+    <functioncall functionName="readPropertiesAndNetlists"/>
+    <functioncall functionName="second"/>
+    <functioncall functionName="shared_ptr"/>
+    <functioncall functionName="static_pointer_cast"/>
+    <functioncall functionName="str"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="top"/>
+    <functioncall functionName="topologyNetlists"/>
+    <functioncall functionName="tops"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="val"/>
+    <functioncall functionName="vector"/>
+    <functioncall functionName="while"/>
+  </FileInfo>
 </analyzerinfo>

@@ -1,3 +1,22 @@
 <?xml version="1.0"?>
-<analyzerinfo checksum="1186173742">
+<analyzerinfo checksum="3722572101">
+  <FileInfo check="CheckUnusedFunctions">
+    <functioncall functionName="ID"/>
+    <functioncall functionName="Topology"/>
+    <functioncall functionName="components"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="empty"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="id"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="print"/>
+    <functioncall functionName="print_attribute"/>
+    <functioncall functionName="print_components"/>
+    <functioncall functionName="print_spaces"/>
+    <functioncall functionName="s"/>
+    <functioncall functionName="shared_ptr"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="spaces"/>
+    <functioncall functionName="while"/>
+  </FileInfo>
 </analyzerinfo>
