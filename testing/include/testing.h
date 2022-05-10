@@ -1,29 +1,36 @@
 #pragma once
 
 #include "API.h"
-#include "Device.h"
 #include "Topology.h"
 #include <memory>
 #include <random>
+#include <string>
 
 namespace topology {
 
 using std::mt19937;
 using std::shared_ptr;
+using std::string;
 
-class TopologyTest : public Topology, public Device, public TopologyAPI {
+class TopologyTest {
 private:
-  string getRandomString(mt19937 &rnd, const char &start = '!',
-                         const char &end = '~') const;
-  shared_ptr<TopologyAPI> getRandomTopologyAPIs() const;
+  typedef TopologyAPI::topologyNetlists topologyNetlists;
+
+  mt19937 rnd;
+
+  string getRandomString(const char &start, const char &end);
+  shared_ptr<TopologyAPI> getRandomTopologyAPI();
+  void validate(const string &firstFileName, const string &secondFileName);
+  void validate(shared_ptr<Topology> firstTop, shared_ptr<Topology> secondTop);
 
 public:
-  bool testReadJSON() const;
-  bool testWriteJSON() const;
-  bool testQueryTopologies() const;
-  bool testDeleteTopology() const;
-  bool testQueryDevices() const;
-  bool testQueryDevicesWithNetlistNode() const;
-  bool testAll() const;
+  TopologyTest();
+  void testReadJSON();
+  void testWriteJSON();
+  void testQueryTopologies();
+  void testDeleteTopology();
+  void testQueryDevices();
+  void testQueryDevicesWithNetlistNode();
+  void testAll();
 };
 } // namespace topology
