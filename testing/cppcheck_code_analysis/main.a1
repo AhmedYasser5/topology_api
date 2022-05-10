@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2220697015">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="main" lineNumber="7"/>
+    <functioncall functionName="Device"/>
+    <functioncall functionName="Topology"/>
+    <functioncall functionName="TopologyAPI"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="pair"/>
+    <functioncall functionName="shared_ptr"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="testAll"/>
+    <functioncall functionName="topologyNetlists"/>
+  </FileInfo>
+</analyzerinfo>

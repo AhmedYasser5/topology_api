@@ -1,0 +1,11 @@
+TopologyTest
+getRandomString call:[back,char] noreturn:[char]
+getRandomTopologyAPI call:[Device,Topology,api,back,dev,emplace_back,end,find,getRandomString,insert,insertNetlists,size] noreturn:[emplace_back,insertNetlists]
+validate call:[assert,correctIn,eof,functionIn] noreturn:[assert]
+testReadJSON call:[begin,exit,getRandomTopologyAPI,readJSON,validate,writeJSON] noreturn:[exit,validate]
+testWriteJSON call:[Device,Topology,back,emplace_back,exit,insertNetlists,make_pair,top,validate,writeJSON] noreturn:[exit]
+testQueryTopologies call:[assert,end,find,getRandomTopologyAPI,queryTopologies,size] noreturn:[assert]
+testDeleteTopology call:[assert,begin,deleteTopology,emplace_back,end,find,getRandomTopologyAPI,shuffle] noreturn:[assert,emplace_back]
+testQueryDevices call:[assert,getRandomTopologyAPI,queryDevices]
+testQueryDevicesWithNetlistNode call:[assert,getRandomTopologyAPI,insert,queryDevicesWithNetlistNode] noreturn:[assert,insert]
+testAll call:[testDeleteTopology,testQueryDevices,testQueryDevicesWithNetlistNode,testQueryTopologies,testReadJSON,testWriteJSON]

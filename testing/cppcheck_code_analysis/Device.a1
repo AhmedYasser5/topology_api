@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="483077941">
+  <FileInfo check="CheckUnusedFunctions">
+    <functioncall functionName="Device"/>
+    <functioncall functionName="TYPE"/>
+    <functioncall functionName="Topology"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="empty"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="id"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="netlist"/>
+    <functioncall functionName="nfirst"/>
+    <functioncall functionName="pair"/>
+    <functioncall functionName="pfirst"/>
+    <functioncall functionName="print_attribute"/>
+    <functioncall functionName="print_components"/>
+    <functioncall functionName="print_netlist"/>
+    <functioncall functionName="print_properties"/>
+    <functioncall functionName="print_spaces"/>
+    <functioncall functionName="properties"/>
+    <functioncall functionName="s"/>
+    <functioncall functionName="second"/>
+    <functioncall functionName="shared_ptr"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="spaces"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="type"/>
+  </FileInfo>
+</analyzerinfo>
