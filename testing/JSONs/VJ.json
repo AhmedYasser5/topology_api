@@ -1,0 +1,72 @@
+{
+  "id": "./JSONs/VJ",
+  "components": [
+    {
+      "type": "OV",
+      "id": "GBC",
+      "V": {
+        "default": 26680.89,
+        "min": 98.16791,
+        "max": 74.4
+      },
+      "netlist": {
+        "E": "HNII",
+        "JYLCS": "U",
+        "O": "C",
+        "GMEY": "O",
+        "CG": "HNII"
+      }
+    },
+    {
+      "type": "S",
+      "id": "OC",
+      "UUEL": {
+        "default": 817.7,
+        "min": 14.66675,
+        "max": 4.966
+      },
+      "QOVU": {
+        "default": 1.29867,
+        "min": 638.80419,
+        "max": 2157.53
+      },
+      "HKBYR": {
+        "default": 30.13193,
+        "min": 9.8,
+        "max": 6.72036
+      },
+      "MYH": {
+        "default": 5750.71322,
+        "min": 6209.298,
+        "max": 6.3
+      },
+      "TDDLO": {
+        "default": 1751.8,
+        "min": 1020.550,
+        "max": 7984.2361
+      },
+      "netlist": {
+        "WN": "SFCUW",
+        "VEVBP": "DVXE"
+      }
+    },
+    {
+      "type": "KZP",
+      "id": "W",
+      "QW": {
+        "default": 7.739,
+        "min": 7.77526,
+        "max": 29455.41
+      },
+      "JE": {
+        "default": 28.20,
+        "min": 5729.586,
+        "max": 3.78082
+      },
+      "netlist": {
+        "N": "PIY",
+        "B": "BBUE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "./JSONs/OBIQG",
+  "components": [
+    {
+      "type": "GOPI",
+      "id": "DHZ",
+      "LSY": {
+        "default": 989.9,
+        "min": 6024.1,
+        "max": 6.540
+      },
+      "ISPY": {
+        "default": 1.8817,
+        "min": 9489.94,
+        "max": 18593.2
+      },
+      "AFEZF": {
+        "default": 672.7,
+        "min": 6.35738,
+        "max": 34.2086
+      },
+      "netlist": {
+        "FX": "E",
+        "XIJCC": "E"
+      }
+    },
+    {
+      "type": "DXKV",
+      "id": "IOI",
+      "AT": {
+        "default": 2607.3,
+        "min": 2361.82,
+        "max": 8.4512
+      },
+      "QE": {
+        "default": 7.83099,
+        "min": 5897.67,
+        "max": 94.924
+      },
+      "OIZJ": {
+        "default": 8.7,
+        "min": 783.9665,
+        "max": 560.4524
+      },
+      "I": {
+        "default": 39961.51,
+        "min": 9.96,
+        "max": 78.1071
+      },
+      "PY": {
+        "default": 1679.726,
+        "min": 83973.66,
+        "max": 18.42723
+      },
+      "netlist": {
+        "JFWBC": "MCRP",
+        "ZHB": "IMRR",
+        "M": "YY",
+        "G": "DNWGD",
+        "XJT": "YY"
+      }
+    },
+    {
+      "type": "BVRFG",
+      "id": "TNUQ",
+      "XSRY": {
+        "default": 75748.48,
+        "min": 9.820,
+        "max": 54558.31080
+      },
+      "netlist": {
+        "YBEAI": "F",
+        "D": "E",
+        "BX": "ULR",
+        "U": "JHONO"
+      }
+    },
+    {
+      "type": "RIDJQ",
+      "id": "QVYY",
+      "WM": {
+        "default": 59.26,
+        "min": 2.8,
+        "max": 841.1
+      },
+      "D": {
+        "default": 71699.7615,
+        "min": 24.3597,
+        "max": 6.5
+      },
+      "CUI": {
+        "default": 170.77,
+        "min": 31123.24,
+        "max": 22.10
+      },
+      "SJX": {
+        "default": 6092.9734,
+        "min": 53028.84404,
+        "max": 84.733
+      },
+      "netlist": {
+        "JS": "R",
+        "QEJO": "YYCRD",
+        "KPM": "XADKN"
+      }
+    },
+    {
+      "type": "PSZRG",
+      "id": "BUUVL",
+      "KL": {
+        "default": 8653.2418,
+        "min": 545.3,
+        "max": 7862.2
+      },
+      "J": {
+        "default": 40995.96234,
+        "min": 288.347,
+        "max": 7.734
+      },
+      "MI": {
+        "default": 80274.9,
+        "min": 72187.9543,
+        "max": 8.9465
+      },
+      "netlist": {
+        "D": "UI",
+        "RPFQD": "WVEQ"
+      }
+    }
+  ]
+}
