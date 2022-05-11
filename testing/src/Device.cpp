@@ -2,7 +2,7 @@
 
 using namespace topology;
 
-Device::Device(const string &TYPE) : Topology("null"), type(TYPE) {}
+Device::Device(const string &TYPE) : Topology(""), type(TYPE) {}
 
 Device::~Device() {}
 
@@ -36,11 +36,11 @@ void Device::print_netlist(ostream &s, int spaces) const {
   s << "\"netlist\": ";
   spaces += 2;
   bool nfirst = true;
+  s << "{\n";
   for (const pair<string, string> &it : netlist) {
-    if (nfirst) {
+    if (nfirst)
       nfirst = false;
-      s << "{\n";
-    } else
+    else
       s << ",\n";
     print_spaces(s, spaces);
     s << "\"" << it.first << "\": \"" << it.second << "\"";
