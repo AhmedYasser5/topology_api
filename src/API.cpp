@@ -22,14 +22,25 @@ bool TopologyAPI::readAttribute(ifstream &inFile, const string &str,
   string val;
   if (!getline(inFile, val, '"'))
     return false;
-  if (isDevice)
-    dev->id = val;
-  else if (str == "type") {
+  bool isRepeated = str == "type" && dev != NULL;
+  isRepeated = isRepeated || (str == "id" && top != NULL && !top->id.empty());
+  if (isRepeated)
+    return false;
+  if (str == "type") {
     dev = shared_ptr<Device>(new Device(val));
+    if (top != NULL) {
+      dev->id = top->id;
+      dev->components.insert(dev->components.end(), top->components.begin(),
+                             top->components.end());
+    }
     top = dev;
     isDevice = true;
-  } else
-    top = shared_ptr<Topology>(new Topology(val));
+  } else {
+    if (top != NULL)
+      top->id = val;
+    else
+      top = shared_ptr<Topology>(new Topology(val));
+  }
   return true;
 }
 
