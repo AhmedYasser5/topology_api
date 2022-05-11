@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<analyzerinfo checksum="531823849">
+<analyzerinfo checksum="501575094">
   <FileInfo check="CheckUnusedFunctions">
     <functiondecl functionName="insertNetlists" lineNumber="8"/>
-    <functiondecl functionName="queryTopologies" lineNumber="156"/>
+    <functiondecl functionName="queryTopologies" lineNumber="167"/>
     <functioncall functionName="Device"/>
     <functioncall functionName="FileName"/>
     <functioncall functionName="NULL"/>
@@ -16,6 +16,7 @@
     <functioncall functionName="dev"/>
     <functioncall functionName="devtop"/>
     <functioncall functionName="emplace_back"/>
+    <functioncall functionName="empty"/>
     <functioncall functionName="end"/>
     <functioncall functionName="erase"/>
     <functioncall functionName="failed"/>
@@ -30,6 +31,7 @@
     <functioncall functionName="insert"/>
     <functioncall functionName="insertNetlists"/>
     <functioncall functionName="isDevice"/>
+    <functioncall functionName="isRepeated"/>
     <functioncall functionName="it"/>
     <functioncall functionName="netlist"/>
     <functioncall functionName="outFile"/>
