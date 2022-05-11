@@ -9,19 +9,19 @@ Defines:
 Undefines:
 Includes: -Iinclude/
 Platform:unix64
-2/5 files checked 39% done
+2/5 files checked 38% done
 Checking src/Topology.cpp ...
 Defines:
 Undefines:
 Includes: -Iinclude/
 Platform:unix64
-3/5 files checked 45% done
+3/5 files checked 43% done
 Checking src/main.cpp ...
 Defines:
 Undefines:
 Includes: -Iinclude/
 Platform:unix64
-4/5 files checked 46% done
+4/5 files checked 44% done
 Checking src/testing.cpp ...
 Defines:
 Undefines:

@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
-<analyzerinfo checksum="2142202587">
+<analyzerinfo checksum="1184145815">
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl functionName="getRandomString" lineNumber="28"/>
+    <functiondecl functionName="getRandomString" lineNumber="26"/>
     <functiondecl functionName="getRandomTopologyAPI" lineNumber="41"/>
-    <functiondecl functionName="validate" lineNumber="102"/>
-    <functiondecl functionName="testReadJSON" lineNumber="132"/>
-    <functiondecl functionName="testWriteJSON" lineNumber="152"/>
-    <functiondecl functionName="testQueryTopologies" lineNumber="187"/>
-    <functiondecl functionName="testDeleteTopology" lineNumber="200"/>
-    <functiondecl functionName="testQueryDevices" lineNumber="215"/>
-    <functiondecl functionName="testQueryDevicesWithNetlistNode" lineNumber="230"/>
-    <functiondecl functionName="testAll" lineNumber="257"/>
+    <functiondecl functionName="validate" lineNumber="108"/>
+    <functiondecl functionName="testReadJSON" lineNumber="138"/>
+    <functiondecl functionName="testWriteJSON" lineNumber="184"/>
+    <functiondecl functionName="testQueryTopologies" lineNumber="216"/>
+    <functiondecl functionName="testDeleteTopology" lineNumber="229"/>
+    <functiondecl functionName="testQueryDevices" lineNumber="244"/>
+    <functiondecl functionName="testQueryDevicesWithNetlistNode" lineNumber="259"/>
+    <functiondecl functionName="testAll" lineNumber="286"/>
     <functioncall functionName="Device"/>
+    <functioncall functionName="RANDOM_STRENGTH"/>
     <functioncall functionName="Topology"/>
     <functioncall functionName="TopologyAPI"/>
     <functioncall functionName="TopologyTest"/>
@@ -21,6 +22,7 @@
     <functioncall functionName="begin"/>
     <functioncall functionName="break"/>
     <functioncall functionName="char"/>
+    <functioncall functionName="comp"/>
     <functioncall functionName="components"/>
     <functioncall functionName="const"/>
     <functioncall functionName="correctIn"/>
@@ -31,7 +33,6 @@
     <functioncall functionName="emplace_back"/>
     <functioncall functionName="end"/>
     <functioncall functionName="eof"/>
-    <functioncall functionName="exit"/>
     <functioncall functionName="false"/>
     <functioncall functionName="find"/>
     <functioncall functionName="first"/>
@@ -54,8 +55,9 @@
     <functioncall functionName="net"/>
     <functioncall functionName="netlist"/>
     <functioncall functionName="nets"/>
+    <functioncall functionName="notAPI"/>
+    <functioncall functionName="notOK"/>
     <functioncall functionName="now"/>
-    <functioncall functionName="ok"/>
     <functioncall functionName="p"/>
     <functioncall functionName="pair"/>
     <functioncall functionName="properties"/>
