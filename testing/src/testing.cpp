@@ -7,8 +7,6 @@
 #include <iostream>
 #include <unordered_set>
 
-#define RANDOM_STRENGTH 10
-
 using std::cout;
 using std::endl;
 using std::ifstream;
@@ -25,9 +23,10 @@ using namespace topology;
 TopologyTest::TopologyTest()
     : rnd(std::chrono::steady_clock::now().time_since_epoch().count()) {}
 
-string TopologyTest::getRandomString(const char &start, const char &end) {
+string TopologyTest::getRandomString(const char &start, const char &end,
+                                     const int &RANDOM_STRENGTH) {
   string s;
-  int len = uniform_int_distribution<int>(1, RANDOM_STRENGTH * 1.5)(rnd);
+  int len = uniform_int_distribution<int>(1, RANDOM_STRENGTH * 0.5)(rnd);
   bool first = true;
   while (len--) {
     s += '"';
@@ -38,7 +37,9 @@ string TopologyTest::getRandomString(const char &start, const char &end) {
   return s;
 }
 
-shared_ptr<TopologyAPI> TopologyTest::getRandomTopologyAPI() {
+shared_ptr<TopologyAPI>
+TopologyTest::getRandomTopologyAPI(const char &start, const char &end,
+                                   const int &RANDOM_STRENGTH) {
   shared_ptr<TopologyAPI> api(new TopologyAPI);
 
   unordered_set<string> topName;
@@ -47,7 +48,7 @@ shared_ptr<TopologyAPI> TopologyTest::getRandomTopologyAPI() {
   for (int i = 0; i < numberOfTopologies; i++) {
     string id;
     while (true) {
-      id = getRandomString('A', 'Z');
+      id = getRandomString(start, end, RANDOM_STRENGTH);
       if (topName.find(id) == topName.end()) {
         topName.insert(id);
         break;
@@ -61,15 +62,18 @@ shared_ptr<TopologyAPI> TopologyTest::getRandomTopologyAPI() {
     int numberOfComponents =
         uniform_int_distribution<int>(1, RANDOM_STRENGTH * 0.5)(rnd);
     for (int j = 0; j < numberOfComponents; j++) {
-      shared_ptr<Device> dev(new Device(getRandomString('A', 'Z')));
+      shared_ptr<Device> dev(
+          new Device(getRandomString(start, end, RANDOM_STRENGTH)));
       top->components.emplace_back(dev);
-      dev->id = getRandomString('A', 'Z');
+      dev->id = getRandomString(start, end, RANDOM_STRENGTH);
 
-      int numberOfNetlists = uniform_int_distribution<int>(2, 4)(rnd);
+      int numberOfNetlists =
+          uniform_int_distribution<int>(2, RANDOM_STRENGTH * 0.5)(rnd);
       for (int k = 0; k < numberOfNetlists; k++) {
         if (!k || uniform_int_distribution<int>(0, 2)(rnd))
-          dev->netlist.emplace_back(getRandomString('A', 'Z'),
-                                    getRandomString('A', 'Z'));
+          dev->netlist.emplace_back(
+              getRandomString(start, end, RANDOM_STRENGTH),
+              getRandomString(start, end, RANDOM_STRENGTH));
         else {
           int index = uniform_int_distribution<int>(
               0, (int)top->components.size() - 1)(rnd);
@@ -77,21 +81,23 @@ shared_ptr<TopologyAPI> TopologyTest::getRandomTopologyAPI() {
               static_pointer_cast<Device>(top->components[index]);
           int net = uniform_int_distribution<int>(
               0, (int)otherDev->netlist.size() - 1)(rnd);
-          dev->netlist.emplace_back(getRandomString('A', 'Z'),
-                                    otherDev->netlist[net].second);
+          dev->netlist.emplace_back(
+              getRandomString(start, end, RANDOM_STRENGTH),
+              otherDev->netlist[net].second);
         }
       }
 
       int numberOfProperties =
           uniform_int_distribution<int>(1, RANDOM_STRENGTH * 0.5)(rnd);
       for (int k = 0; k < numberOfProperties; k++) {
-        dev->properties.emplace_back(getRandomString('A', 'Z'),
-                                     vector<pair<string, string>>());
+        dev->properties.emplace_back(
+            getRandomString(start, end, RANDOM_STRENGTH),
+            vector<pair<string, string>>());
         const static string values[] = {"default", "min", "max"};
         for (int p = 0; p < 3; p++)
           dev->properties.back().second.emplace_back(
-              values[p],
-              getRandomString('0', '9') + '.' + getRandomString('0', '9'));
+              values[p], getRandomString('0', '9', RANDOM_STRENGTH) + '.' +
+                             getRandomString('0', '9', RANDOM_STRENGTH));
       }
     }
     topnet.insertNetlists();
@@ -131,20 +137,46 @@ void TopologyTest::validate(shared_ptr<Topology> firstTop,
 
 void TopologyTest::testReadJSON() {
   cout << "\ntestReadJSON() has started\n";
-  shared_ptr<TopologyAPI> api = getRandomTopologyAPI();
-  for (const pair<string, topologyNetlists> &it : api->tops) {
-    bool ok = api->writeJSON(it.first);
-    if (!ok) {
-      cout << "failed to write" << it.first + ".json" << endl;
-      exit(-1);
+  for (int i = 0; i < 3; i++) {
+    shared_ptr<TopologyAPI> api;
+    if (i == 1)
+      api = getRandomTopologyAPI('d', 'i', 30);
+    else if (i == 2)
+      api = getRandomTopologyAPI('e', 'y', 30);
+    else
+      api = getRandomTopologyAPI('A', 'Z');
+    for (const pair<string, topologyNetlists> &it : api->tops) {
+      bool notOK = false, notAPI = false;
+      for (shared_ptr<Topology> comp : it.second.top->components) {
+        shared_ptr<Device> dev = static_pointer_cast<Device>(comp);
+        for (const pair<string, vector<pair<string, string>>> &prop :
+             dev->properties) {
+          if (prop.first == "id" || prop.first == "type") {
+            notOK = true;
+            break;
+          }
+          if (prop.first == "netlist" || prop.first == "components") {
+            notAPI = true;
+            break;
+          }
+        }
+        if (notAPI || notOK)
+          break;
+      }
+      if (notAPI) {
+        i--;
+        break;
+      }
+
+      bool isOK = api->writeJSON(it.first);
+      assert(i || isOK);
+
+      TopologyAPI testAPI;
+      isOK = testAPI.readJSON(it.first + ".json");
+      assert(isOK == !notOK);
+      if (!notOK)
+        validate(testAPI.tops.begin()->second.top, it.second.top);
     }
-    TopologyAPI testAPI;
-    ok = testAPI.readJSON(it.first + ".json");
-    if (!ok) {
-      cout << "failed to read " << it.first + ".json" << endl;
-      exit(-2);
-    }
-    validate(testAPI.tops.begin()->second.top, it.second.top);
   }
   cout << "testReadJSON() has passed\n";
 }
@@ -176,17 +208,14 @@ void TopologyTest::testWriteJSON() {
   topnet.top = top;
   topnet.insertNetlists();
   bool ok = api.writeJSON(top->id);
-  if (!ok) {
-    cout << "Failed to write ./JSONs/topology.json" << endl;
-    exit(-1);
-  }
+  assert(ok == true);
   validate(top->id + ".json", "./JSONs/topology.json");
   cout << "testWriteJSON() has passed\n";
 }
 
 void TopologyTest::testQueryTopologies() {
   cout << "\ntestQueryTopologies() has started\n";
-  shared_ptr<TopologyAPI> api = getRandomTopologyAPI();
+  shared_ptr<TopologyAPI> api = getRandomTopologyAPI('A', 'Z');
   vector<shared_ptr<Topology>> tops = api->queryTopologies();
   assert(api->tops.size() == tops.size());
   for (shared_ptr<Topology> &top : tops) {
@@ -199,7 +228,7 @@ void TopologyTest::testQueryTopologies() {
 
 void TopologyTest::testDeleteTopology() {
   cout << "\ntestDeleteTopology() has started\n";
-  shared_ptr<TopologyAPI> api = getRandomTopologyAPI();
+  shared_ptr<TopologyAPI> api = getRandomTopologyAPI('A', 'Z');
   vector<string> ids;
   for (const pair<string, topologyNetlists> &it : api->tops)
     ids.emplace_back(it.first);
@@ -214,7 +243,7 @@ void TopologyTest::testDeleteTopology() {
 
 void TopologyTest::testQueryDevices() {
   cout << "\ntestQueryDevices() has started\n";
-  shared_ptr<TopologyAPI> api = getRandomTopologyAPI();
+  shared_ptr<TopologyAPI> api = getRandomTopologyAPI('A', 'Z');
   for (const pair<string, topologyNetlists> &topnet : api->tops) {
     vector<shared_ptr<Device>> devs = api->queryDevices(topnet.second.top->id);
     int i = 0;
@@ -229,7 +258,7 @@ void TopologyTest::testQueryDevices() {
 
 void TopologyTest::testQueryDevicesWithNetlistNode() {
   cout << "\ntestQueryDevicesWithNetlistNode() has started\n";
-  shared_ptr<TopologyAPI> api = getRandomTopologyAPI();
+  shared_ptr<TopologyAPI> api = getRandomTopologyAPI('A', 'Z');
   for (const pair<string, topologyNetlists> &topnet : api->tops) {
     unordered_set<string> nets;
     for (shared_ptr<Topology> top : topnet.second.top->components) {
@@ -255,7 +284,7 @@ void TopologyTest::testQueryDevicesWithNetlistNode() {
 }
 
 void TopologyTest::testAll() {
-  cout << "Testing has started\n";
+  cout << "Testing has started...\n";
   testWriteJSON();
   testReadJSON();
   testQueryTopologies();

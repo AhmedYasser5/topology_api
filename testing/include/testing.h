@@ -18,8 +18,11 @@ private:
 
   mt19937 rnd;
 
-  string getRandomString(const char &start, const char &end);
-  shared_ptr<TopologyAPI> getRandomTopologyAPI();
+  string getRandomString(const char &start, const char &end,
+                         const int &RANDOM_STRENGTH = 10);
+  shared_ptr<TopologyAPI> getRandomTopologyAPI(const char &start,
+                                               const char &end,
+                                               const int &RANDOM_STRENGTH = 10);
   void validate(const string &firstFileName, const string &secondFileName);
   void validate(shared_ptr<Topology> firstTop, shared_ptr<Topology> secondTop);
 
