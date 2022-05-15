@@ -118,7 +118,7 @@ shared_ptr<Topology> TopologyAPI::readData(ifstream &inFile) {
     if (str == "id" || str == "type")
       failed = !readAttribute(inFile, str, top, dev, isDevice);
     else if (str == "components")
-      failed = !readComponents(inFile, top);
+      failed = top != NULL && !readComponents(inFile, top);
     else if (isDevice)
       failed = !readPropertiesAndNetlists(inFile, str, dev);
     else
