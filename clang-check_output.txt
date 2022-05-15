@@ -1,0 +1,9 @@
+scan-build: Using '/usr/bin/clang-13' for static analysis
+CXX NORMAL src/API.cpp -> build/obj/API.cpp.o
+CXX NORMAL src/Device.cpp -> build/obj/Device.cpp.o
+CXX NORMAL src/Topology.cpp -> build/obj/Topology.cpp.o
+CXX NORMAL src/main.cpp -> build/obj/main.cpp.o
+LD NORMAL build/obj/*.o -> Topology_API.exe
+scan-build: Analysis run complete.
+scan-build: Removing directory '/tmp/scan-build-2022-05-15-162348-23831-1' because it contains no reports.
+scan-build: No bugs found.
