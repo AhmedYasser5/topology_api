@@ -1,2 +1,0 @@
-insertNetlists call:[insert] noreturn:[insert]
-queryTopologies call:[emplace_back] noreturn:[emplace_back]
