@@ -7,6 +7,8 @@ OBJDIR := ./build/obj
 DEPDIR := ./build/deps
 BINDIR := .
 TARGET := $(BINDIR)/$(subst $(space),_,$(shell basename "${PWD}")).exe
+LIBDIR := lib
+LIB := TopologyAPI
 
 MY_PATHS := $(BINDIR) $(INCDIR)
 MY_FLAGS := 
@@ -17,7 +19,7 @@ MY_FLAGS += $(shell cat .my_flags 2>/dev/null)
 
 ###### complier set-up ######
 CC = gcc
-CFLAGS = -Wextra
+CFLAGS = $(MY_FLAGS) -Wextra
 CXX = g++
 CXXFLAGS = $(CFLAGS)
 LD = g++
@@ -40,10 +42,7 @@ else
 	CXXFLAGS += -O0 -std=c++14
 endif
 
-CFLAGS += $(MY_FLAGS)
-
-OUTPUT_OPTION := -MMD -MP -I$(SRCDIR)
-OUTPUT_OPTION += $(foreach i,$(MY_PATHS),-I$(i))
+CFLAGS += -MMD -MP -I$(SRCDIR) $(foreach i,$(MY_PATHS),-I$(i))
 
 SRCS := $(wildcard $(SRCDIR)/**/*.cpp)
 SRCS += $(wildcard $(SRCDIR)/*.cpp)
@@ -53,7 +52,11 @@ DEPS := $(patsubst $(SRCDIR)/%,$(DEPDIR)/%.d,$(SRCS))
 OBJS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%.o,$(SRCS))
 
 .PHONY: all
-all : $(TARGET)
+all : library $(TARGET)
+
+.PHONY: run
+run : library $(TARGET)
+	@LD_LIBRARY_PATH=$(LIBDIR):$$LD_LIBRARY_PATH $(TARGET)
 
 .PHONY: init
 init :
@@ -63,18 +66,25 @@ init :
 	-@for i in $(wildcard *.h); do mv ./$$i $(INCDIR)/$$i; done
 	-@echo -e "-DDEBUG$(foreach i,$(MY_PATHS),\n-I../$(i)\n-I$(i))" >| src/.clang_complete
 
+.PHONY: library
+library :
+	@export RELEASE DEBUG
+	@$(MAKE) -C $(LIBDIR)
+	-@echo --------------------------------------------------
+
 $(TARGET): $(OBJS)
-	-@echo LD $(maketype) "$(<D)/*.o" "->" $@ && $(LD) $(LDFLAGS) $(OBJS) -o $@
+	-@echo LD $(maketype) "$(<D)/*.o" "->" $@ && \
+		$(LD) -o $@ $(OBJS) -L$(LIBDIR) -l$(LIB) $(LDFLAGS)
 
 $(OBJDIR)/%.cpp.o: $(SRCDIR)/%.cpp
+	@mkdir -p $(OBJDIR) $(DEPDIR)
 	-@echo CXX $(maketype) $< "->" $@ && \
-		$(CXX) $(CXXFLAGS) -c $< $(OUTPUT_OPTION) \
-		-o $@ -MF $(DEPDIR)/$(<F).d
+		$(CXX) -c $< -o $@ -MF $(DEPDIR)/$(<F).d $(CXXFLAGS)
 
 $(OBJDIR)/%.c.o: $(SRCDIR)/%.c
+	@mkdir -p $(OBJDIR) $(DEPDIR)
 	-@echo CC $(maketype) $< "->" $@ && \
-		$(CC) $(CFLAGS) -c $< $(OUTPUT_OPTION) \
-		-o $@ -MF $(DEPDIR)/$(<F).d
+		$(CC) -c $< -o $@ -MF $(DEPDIR)/$(<F).d $(CFLAGS)
 
 .PHONY: clean
 clean: 
