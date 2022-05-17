@@ -1,0 +1,333 @@
+{
+  "id": "./JSONs/mpksgo",
+  "components": [
+    {
+      "type": "wsiuwy",
+      "id": "mqjojo",
+      "yosxtpp": {
+        "default": 4.6977820,
+        "min": 11.5,
+        "max": 1.60559799
+      },
+      "rjhoqrivk": {
+        "default": 88018662.5327804699,
+        "min": 299105.8268,
+        "max": 96.51763169
+      },
+      "weptlqkr": {
+        "default": 77870.82743,
+        "min": 4.4,
+        "max": 7319213.3
+      },
+      "hnshehxvk": {
+        "default": 2294647465.16138,
+        "min": 9673458.418412,
+        "max": 474.8928864
+      },
+      "ytvxqy": {
+        "default": 1.291841666,
+        "min": 74.68666378,
+        "max": 1.4285
+      },
+      "netlist": {
+        "itowj": "wkouw",
+        "r": "wkouw"
+      }
+    },
+    {
+      "type": "fsoptmvygi",
+      "id": "lvfjllmfgk",
+      "ohtymsxsx": {
+        "default": 768012775.214,
+        "min": 48134437.4,
+        "max": 4107102120.77
+      },
+      "xpt": {
+        "default": 90085048.122767,
+        "min": 35707953.903374,
+        "max": 90707.699024521
+      },
+      "immku": {
+        "default": 259725303.902899,
+        "min": 79.8188,
+        "max": 2.835
+      },
+      "kw": {
+        "default": 589762987.7575650,
+        "min": 541.14213,
+        "max": 54.977469
+      },
+      "nlmjghv": {
+        "default": 5412058328.9221,
+        "min": 488004383.943348,
+        "max": 851226.886
+      },
+      "tgj": {
+        "default": 84432848.822,
+        "min": 4498549528.22518789,
+        "max": 550289960.9331553
+      },
+      "wwhqki": {
+        "default": 5996430187.764,
+        "min": 381.888,
+        "max": 4275.39980016
+      },
+      "psheyp": {
+        "default": 96740.6669428183,
+        "min": 49085086.178099,
+        "max": 2229.7580946083
+      },
+      "netlist": {
+        "pesepepjq": "msh",
+        "mqkxotrsex": "ipxwwinlkn"
+      }
+    },
+    {
+      "type": "yruhykm",
+      "id": "txexsuee",
+      "xm": {
+        "default": 500965853.454165026,
+        "min": 75745164.4602990,
+        "max": 71981.599917
+      },
+      "jvkiffvg": {
+        "default": 328.2356720871,
+        "min": 67489158.4775896,
+        "max": 111275.7
+      },
+      "lujl": {
+        "default": 199849.90811,
+        "min": 7731879456.8459938240,
+        "max": 845487133.3530402
+      },
+      "emiif": {
+        "default": 980584000.5188122562,
+        "min": 4.2238,
+        "max": 731144.3
+      },
+      "eshlxkvi": {
+        "default": 591210.52,
+        "min": 777.759,
+        "max": 9589490.793826627
+      },
+      "qxgmy": {
+        "default": 9120711.239795,
+        "min": 597184530.398,
+        "max": 537671527.408305353
+      },
+      "kxljurk": {
+        "default": 4616.7444,
+        "min": 59567.3455,
+        "max": 5.51760829
+      },
+      "nfvtwujf": {
+        "default": 876998016.22984084,
+        "min": 650713795.1,
+        "max": 891671108.2
+      },
+      "lyyys": {
+        "default": 5772873.930,
+        "min": 5524146872.964104201,
+        "max": 22164110.927637
+      },
+      "fstmn": {
+        "default": 77241.16906063,
+        "min": 705608.877167,
+        "max": 2062565.9
+      },
+      "netlist": {
+        "hgexup": "uwyifnxis",
+        "uok": "thskvqq",
+        "qstr": "msh",
+        "ejwuy": "msh"
+      }
+    },
+    {
+      "type": "oxsku",
+      "id": "hmitlihfrg",
+      "qpromji": {
+        "default": 580982.99,
+        "min": 9098227325.749245494,
+        "max": 1067467930.25970302
+      },
+      "netlist": {
+        "vwunffwy": "iuxrxxlhu",
+        "jrkjllfth": "wkouw",
+        "rxse": "msh",
+        "rv": "tpelhmslhi",
+        "tjquqjlkxn": "ejskftfu",
+        "w": "vfilliupmf"
+      }
+    },
+    {
+      "type": "hsupseytgg",
+      "id": "rxf",
+      "un": {
+        "default": 692501968.446358,
+        "min": 11146266.317,
+        "max": 4327788.1783219
+      },
+      "sukekwxeys": {
+        "default": 854217751.29,
+        "min": 12.833926,
+        "max": 60279.9442
+      },
+      "nvjxyy": {
+        "default": 6181.3269455,
+        "min": 60.8273180,
+        "max": 494717308.5210018
+      },
+      "v": {
+        "default": 82.8831,
+        "min": 99.4,
+        "max": 8394.94
+      },
+      "ekgjeqq": {
+        "default": 13.964226655,
+        "min": 8943202.9034,
+        "max": 6.1495139202
+      },
+      "yht": {
+        "default": 99.8,
+        "min": 62.49580,
+        "max": 350.3
+      },
+      "fwnopwxf": {
+        "default": 6517093.1751089,
+        "min": 3927306809.2011912,
+        "max": 5.118346804
+      },
+      "epilnokxmk": {
+        "default": 19952811.552660082,
+        "min": 568559.30838879,
+        "max": 268188183.129160297
+      },
+      "netlist": {
+        "xqxtw": "ewspkjk",
+        "vkrhrofnei": "thskvqq",
+        "xpi": "mggljn",
+        "ogu": "hnnllgpiqp",
+        "vnikvo": "hnnllgpiqp",
+        "ungminhk": "sytuw",
+        "w": "msh",
+        "swgjho": "ugxwmso"
+      }
+    },
+    {
+      "type": "qiwpjfviwg",
+      "id": "flwsgp",
+      "hfx": {
+        "default": 9479991.9944798,
+        "min": 28240194.975255,
+        "max": 9131.29443633
+      },
+      "igl": {
+        "default": 69.93136325,
+        "min": 457.9450494,
+        "max": 250967855.9708317771
+      },
+      "wfyv": {
+        "default": 87210775.59,
+        "min": 493.32032448,
+        "max": 57.82
+      },
+      "netlist": {
+        "ues": "rxhegjr",
+        "nfjospgmks": "t",
+        "xgpis": "ovmn",
+        "nwophv": "hnnllgpiqp",
+        "plss": "jnoljggj",
+        "yl": "qoejsvvpsg",
+        "nnukp": "ipxwwinlkn",
+        "oejpskg": "ovmn",
+        "ht": "ipxwwinlkn",
+        "eqglyrqhrt": "wkouw"
+      }
+    },
+    {
+      "type": "mkeqvmvl",
+      "id": "qqqqjiyt",
+      "jtlsumty": {
+        "default": 88701213.842,
+        "min": 135373187.328388,
+        "max": 7.801160599
+      },
+      "ssqisi": {
+        "default": 298601.657474,
+        "min": 6656084428.94,
+        "max": 591098159.839
+      },
+      "ufmvr": {
+        "default": 6697.3803222,
+        "min": 1943.67954,
+        "max": 4612486.97362117
+      },
+      "lpk": {
+        "default": 4659519392.7131,
+        "min": 480432.559490279,
+        "max": 957083.1432
+      },
+      "klsuhprym": {
+        "default": 94680345.3535953681,
+        "min": 6.178670693,
+        "max": 7604.397025909
+      },
+      "netlist": {
+        "v": "hyeqgushm",
+        "qtpks": "perrv",
+        "weqtrrn": "wkouw",
+        "x": "pmgx",
+        "xsqwikh": "ejskftfu",
+        "rmjuj": "hoog"
+      }
+    },
+    {
+      "type": "xogqj",
+      "id": "oo",
+      "pgnfnfe": {
+        "default": 369844.455777,
+        "min": 903.1139464,
+        "max": 341228.2
+      },
+      "rtu": {
+        "default": 96.508109,
+        "min": 244876952.823,
+        "max": 3930.729029831
+      },
+      "iqi": {
+        "default": 6190626.11626,
+        "min": 450565.8188316620,
+        "max": 472299903.1809
+      },
+      "jfypqrqx": {
+        "default": 71.4,
+        "min": 6100111.3046637563,
+        "max": 7913.1196296726
+      },
+      "xmsviikl": {
+        "default": 24830292.87,
+        "min": 2295973287.4196582,
+        "max": 5.597
+      },
+      "qvnuw": {
+        "default": 8283688003.6,
+        "min": 4937218.49,
+        "max": 528603147.526
+      },
+      "ptrr": {
+        "default": 41.95260473,
+        "min": 4793.91,
+        "max": 6517179005.4
+      },
+      "netlist": {
+        "qtw": "uru",
+        "uyssxnf": "esoiuffwy",
+        "tneklfq": "gwulpekgr",
+        "jtjmsv": "jqmyopte",
+        "lop": "jrq",
+        "hpnefhpukk": "ul",
+        "immqkht": "tw"
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "./JSONs/yeesu",
+  "components": [
+    {
+      "type": "w",
+      "id": "zsnyhvn",
+      "g": {
+        "default": 57.439035,
+        "min": 57560.912,
+        "max": 300.988780605
+      },
+      "yzr": {
+        "default": 355670713.4119744,
+        "min": 654241609.86781939,
+        "max": 203628159.7
+      },
+      "laxrs": {
+        "default": 23.467063862,
+        "min": 923205760.836040,
+        "max": 7762280.5
+      },
+      "wmaemgukyb": {
+        "default": 7772550.19729893,
+        "min": 62098.973,
+        "max": 89499725.45
+      },
+      "s": {
+        "default": 8399.79,
+        "min": 89116.9,
+        "max": 240629.116561
+      },
+      "netlist": {
+        "wkwkm": "cklx",
+        "icdosclf": "dmpqmmzgga",
+        "hcfyb": "dmpqmmzgga",
+        "wl": "dmpqmmzgga",
+        "ndtncgtl": "wzff"
+      }
+    }
+  ]
+}

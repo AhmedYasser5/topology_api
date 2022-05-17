@@ -1,0 +1,55 @@
+{
+  "id": "./JSONs/yai",
+  "components": [
+    {
+      "type": "dsz",
+      "id": "jspzdqo",
+      "enulxgxz": {
+        "default": 67821.27536757,
+        "min": 9837.556539125,
+        "max": 694505.804832492
+      },
+      "scsmhjjo": {
+        "default": 9596522.139432,
+        "min": 7454982379.6,
+        "max": 9575491.9634
+      },
+      "wn": {
+        "default": 6688636.70101,
+        "min": 6110710010.3328253030,
+        "max": 8656.4967984093
+      },
+      "niolybrn": {
+        "default": 119147588.66710,
+        "min": 91114635.2781069,
+        "max": 93.727162888
+      },
+      "nhvin": {
+        "default": 964782.8417,
+        "min": 68.52849010,
+        "max": 14643143.8260
+      },
+      "winkagkjwc": {
+        "default": 7.4159878438,
+        "min": 23860892.16347,
+        "max": 4457.4814
+      },
+      "mrdgwvr": {
+        "default": 4443277.68,
+        "min": 234619.75,
+        "max": 95680.9917
+      },
+      "netlist": {
+        "zidnth": "fkcazx",
+        "p": "fkcazx",
+        "ydipfpd": "wydr",
+        "uiusngtx": "fkcazx",
+        "zdln": "mk",
+        "aw": "hr",
+        "ochjjsez": "mk",
+        "njzb": "u",
+        "raqwm": "wydr"
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "./JSONs/hf",
+  "components": [
+    {
+      "type": "hdiiihfdh",
+      "id": "gh",
+      "effgffhf": {
+        "default": 256880.809273605,
+        "min": 247415.48,
+        "max": 87455978.617163
+      },
+      "hhhhif": {
+        "default": 73586.9404615361,
+        "min": 83885.8216143,
+        "max": 4145495970.992
+      },
+      "netlist": {
+        "egeefhe": "gfihf",
+        "hi": "ighiffd",
+        "egidehdih": "gfihf",
+        "diiff": "gfihf",
+        "hf": "fggdhif",
+        "f": "d",
+        "efdgh": "fihdd",
+        "ghggdhdhd": "ddgifhdgi",
+        "eedege": "fihdd",
+        "heh": "egi"
+      }
+    },
+    {
+      "type": "fe",
+      "id": "if",
+      "iffidfefe": {
+        "default": 1937814443.5151882,
+        "min": 9.433189060,
+        "max": 1029.71425570
+      },
+      "ede": {
+        "default": 9919.5,
+        "min": 6.89,
+        "max": 6.3
+      },
+      "gfhddgid": {
+        "default": 9752001119.41177,
+        "min": 6663.4,
+        "max": 8013895978.703
+      },
+      "eei": {
+        "default": 33.846039,
+        "min": 350362904.60,
+        "max": 153555.8430
+      },
+      "ghg": {
+        "default": 43233200.26377,
+        "min": 57699097.72651,
+        "max": 1.3397604
+      },
+      "eedge": {
+        "default": 3781885.3,
+        "min": 8831.575,
+        "max": 829.526171947
+      },
+      "ded": {
+        "default": 241830.3,
+        "min": 5.2029136,
+        "max": 599.5
+      },
+      "ehd": {
+        "default": 26405.4966092875,
+        "min": 877098080.66114,
+        "max": 25974148.644
+      },
+      "netlist": {
+        "d": "h",
+        "fgfhgggh": "h",
+        "fifigighd": "igihgdgh",
+        "ifghhihe": "h",
+        "dfefiigd": "d",
+        "ghdihdfd": "gehifehh",
+        "eig": "gfihf",
+        "diigighffh": "d",
+        "dife": "dd"
+      }
+    },
+    {
+      "type": "fgefhd",
+      "id": "iefdfgh",
+      "ffefh": {
+        "default": 748057720.341509,
+        "min": 4.754,
+        "max": 70573923.728827311
+      },
+      "giiddhfge": {
+        "default": 356.825,
+        "min": 3.9639,
+        "max": 1899175861.30242738
+      },
+      "iedgi": {
+        "default": 226.41,
+        "min": 6500770545.59,
+        "max": 7930893581.9
+      },
+      "h": {
+        "default": 5.45081,
+        "min": 3245.5,
+        "max": 329048.77640873
+      },
+      "hfe": {
+        "default": 5.3966321,
+        "min": 4119.77,
+        "max": 9377057806.13326
+      },
+      "fhdhddifif": {
+        "default": 12.180,
+        "min": 13330.99454954,
+        "max": 80.9
+      },
+      "netlist": {
+        "ihhdehidig": "egf",
+        "hiifigffeg": "ffdei"
+      }
+    },
+    {
+      "type": "gf",
+      "id": "hhifighid",
+      "hfddf": {
+        "default": 8901.6790,
+        "min": 71397822.651064638,
+        "max": 51278.328263153
+      },
+      "deiddf": {
+        "default": 98153.991,
+        "min": 4089936513.7714400,
+        "max": 57684.973
+      },
+      "he": {
+        "default": 64362407.30,
+        "min": 2010599712.4286,
+        "max": 41065.93655979
+      },
+      "iigieddgh": {
+        "default": 3.418812167,
+        "min": 6241879460.546296,
+        "max": 6900295.7868254801
+      },
+      "fehidff": {
+        "default": 6.5192,
+        "min": 153493.940,
+        "max": 5048003.2843983
+      },
+      "ghgidfid": {
+        "default": 8160527.102292178,
+        "min": 4163.44852,
+        "max": 2.8760128
+      },
+      "hfdgi": {
+        "default": 57313.1015,
+        "min": 5.6,
+        "max": 70.49
+      },
+      "e": {
+        "default": 9548474363.95114180,
+        "min": 988678028.5383994,
+        "max": 85735624.7705
+      },
+      "degdhiddgi": {
+        "default": 51610.4669536944,
+        "min": 5631.77084,
+        "max": 5886.4110779770
+      },
+      "f": {
+        "default": 4689616.25,
+        "min": 50.85081,
+        "max": 2232.13
+      },
+      "netlist": {
+        "iddeihhegd": "ddhd",
+        "figgg": "ggedfg",
+        "fd": "ffdei",
+        "ggddgiiiif": "eh",
+        "edhe": "gfihf",
+        "i": "i",
+        "igfif": "ihiifh"
+      }
+    },
+    {
+      "type": "gd",
+      "id": "fgdhe",
+      "igg": {
+        "default": 6.4029982,
+        "min": 9584510200.3882295087,
+        "max": 84012.47064821
+      },
+      "netlist": {
+        "dfdhh": "ei",
+        "i": "d",
+        "fididffi": "gfgehgeed",
+        "h": "ffdei",
+        "igedgeh": "edig"
+      }
+    }
+  ]
+}

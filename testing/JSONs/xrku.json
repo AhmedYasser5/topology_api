@@ -1,0 +1,116 @@
+{
+  "id": "./JSONs/xrku",
+  "components": [
+    {
+      "type": "ml",
+      "id": "nghqx",
+      "svqqikfimi": {
+        "default": 4411942.817256,
+        "min": 7431261347.2749373,
+        "max": 500406.488190270
+      },
+      "netlist": {
+        "tlr": "mipnwsugl",
+        "uinwjnnp": "hl",
+        "iuliopk": "fg",
+        "hhkjksx": "ksswtkkgnx",
+        "gwpthjigy": "gehwxxp"
+      }
+    },
+    {
+      "type": "lfs",
+      "id": "lxfpwspp",
+      "wrqvv": {
+        "default": 46569.644516951,
+        "min": 535634.5,
+        "max": 839.33
+      },
+      "netlist": {
+        "hqgkhvpws": "yyqxqrxxf",
+        "kfmjley": "wss",
+        "n": "nuvrn",
+        "kroe": "fg"
+      }
+    },
+    {
+      "type": "nlp",
+      "id": "fvp",
+      "iujrf": {
+        "default": 4622430674.6259198353,
+        "min": 57.18071,
+        "max": 96619112.14392
+      },
+      "irpxwklfr": {
+        "default": 4440571.77491,
+        "min": 84.205,
+        "max": 7989.312573
+      },
+      "netlist": {
+        "fvqelqhh": "vsg",
+        "mphtlnulij": "pwgprii"
+      }
+    },
+    {
+      "type": "ip",
+      "id": "nyvxekyotk",
+      "fehspkihno": {
+        "default": 182033285.9577,
+        "min": 3675.6102344,
+        "max": 79.37719772
+      },
+      "mo": {
+        "default": 10199.43384,
+        "min": 48338.42848,
+        "max": 1661.184844
+      },
+      "fmjxe": {
+        "default": 18.44862741,
+        "min": 545328.9889826,
+        "max": 172748507.151
+      },
+      "yoohjiejlg": {
+        "default": 6583578.371802229,
+        "min": 1215839.43795,
+        "max": 925.62045
+      },
+      "gjk": {
+        "default": 4995025183.5742,
+        "min": 811.594146508,
+        "max": 4313.86
+      },
+      "inluus": {
+        "default": 644782012.3744,
+        "min": 6363.48837066,
+        "max": 61.612004417
+      },
+      "ohvumrph": {
+        "default": 1646168.27224751,
+        "min": 49.491408,
+        "max": 66699.856216731
+      },
+      "noplt": {
+        "default": 23787.57977,
+        "min": 81033.66271,
+        "max": 658860728.9727242
+      },
+      "segrhxf": {
+        "default": 8.1634685,
+        "min": 4699.123489,
+        "max": 198043.4111639
+      },
+      "xvgvesi": {
+        "default": 738.3,
+        "min": 912839093.8649201345,
+        "max": 143980.75518
+      },
+      "netlist": {
+        "i": "qrhnsyw",
+        "exxkmf": "the",
+        "fihgjvnq": "sfkx",
+        "x": "yyqxqrxxf",
+        "p": "ej",
+        "qroh": "ylwossnk"
+      }
+    }
+  ]
+}

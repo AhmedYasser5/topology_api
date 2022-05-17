@@ -1,0 +1,121 @@
+{
+  "id": "./JSONs/BQOG",
+  "components": [
+    {
+      "type": "WB",
+      "id": "TGUP",
+      "PM": {
+        "default": 87855.7862,
+        "min": 55501.60,
+        "max": 2.244
+      },
+      "TSJTA": {
+        "default": 29647.8,
+        "min": 7.7,
+        "max": 53.7
+      },
+      "U": {
+        "default": 653.6,
+        "min": 92.63,
+        "max": 48.687
+      },
+      "ORXOD": {
+        "default": 8.79,
+        "min": 10.95276,
+        "max": 551.3
+      },
+      "D": {
+        "default": 4499.8671,
+        "min": 790.9,
+        "max": 2.25
+      },
+      "netlist": {
+        "LQY": "YE",
+        "MDJUN": "SRUTM",
+        "K": "UBKX",
+        "RWBHI": "NZKB"
+      }
+    },
+    {
+      "type": "MKHPU",
+      "id": "ALLBF",
+      "KOFRT": {
+        "default": 6446.7,
+        "min": 85.85614,
+        "max": 79313.4838
+      },
+      "netlist": {
+        "KQZH": "G",
+        "B": "YE"
+      }
+    },
+    {
+      "type": "N",
+      "id": "RL",
+      "DEP": {
+        "default": 4.7,
+        "min": 114.471,
+        "max": 5.3
+      },
+      "GQRM": {
+        "default": 7912.3031,
+        "min": 7583.69,
+        "max": 8.9237
+      },
+      "VZXH": {
+        "default": 9659.60,
+        "min": 5935.261,
+        "max": 622.6167
+      },
+      "PYRG": {
+        "default": 955.1354,
+        "min": 614.7,
+        "max": 931.724
+      },
+      "netlist": {
+        "XXFMN": "J",
+        "L": "SK",
+        "H": "YE"
+      }
+    },
+    {
+      "type": "HX",
+      "id": "W",
+      "FDHU": {
+        "default": 79.1,
+        "min": 5.86,
+        "max": 3851.4352
+      },
+      "Q": {
+        "default": 96.758,
+        "min": 3449.6456,
+        "max": 1149.9
+      },
+      "netlist": {
+        "NCPGL": "SAVYY",
+        "HMACH": "FFFP",
+        "XYIUZ": "GS",
+        "IRF": "UBKX"
+      }
+    },
+    {
+      "type": "VELUD",
+      "id": "Q",
+      "WZ": {
+        "default": 41.11530,
+        "min": 49.2706,
+        "max": 9.248
+      },
+      "ANPBF": {
+        "default": 26.72,
+        "min": 532.71,
+        "max": 85.8
+      },
+      "netlist": {
+        "Y": "UNAY",
+        "D": "JZT",
+        "MQW": "X"
+      }
+    }
+  ]
+}

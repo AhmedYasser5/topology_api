@@ -1,0 +1,116 @@
+{
+  "id": "./JSONs/WQW",
+  "components": [
+    {
+      "type": "HYR",
+      "id": "L",
+      "VYIWC": {
+        "default": 39.4393,
+        "min": 6.9,
+        "max": 61.5
+      },
+      "C": {
+        "default": 69726.89,
+        "min": 3861.3,
+        "max": 609.4657
+      },
+      "netlist": {
+        "BD": "EKNIG",
+        "WSWMD": "VCIM"
+      }
+    },
+    {
+      "type": "ALKJJ",
+      "id": "MCUU",
+      "ROO": {
+        "default": 9.20162,
+        "min": 3280.7739,
+        "max": 5575.775
+      },
+      "OCGBH": {
+        "default": 91.9862,
+        "min": 216.81,
+        "max": 6816.5
+      },
+      "AO": {
+        "default": 5.308,
+        "min": 35653.8089,
+        "max": 5.97997
+      },
+      "IEFD": {
+        "default": 59.9,
+        "min": 55.84095,
+        "max": 240.162
+      },
+      "netlist": {
+        "XXBO": "GW",
+        "W": "SD",
+        "ASN": "H",
+        "UCEG": "K",
+        "CAZNZ": "YOU"
+      }
+    },
+    {
+      "type": "URR",
+      "id": "PX",
+      "HMCL": {
+        "default": 88.4993,
+        "min": 88.23,
+        "max": 1.134
+      },
+      "OJJBU": {
+        "default": 70.73731,
+        "min": 214.74,
+        "max": 30.72063
+      },
+      "JN": {
+        "default": 97638.49,
+        "min": 86.1,
+        "max": 6.39337
+      },
+      "RBPRI": {
+        "default": 610.55470,
+        "min": 87.90079,
+        "max": 5.661
+      },
+      "netlist": {
+        "KJ": "EQJ",
+        "XLO": "SD"
+      }
+    },
+    {
+      "type": "JUYL",
+      "id": "EGWW",
+      "FHXLR": {
+        "default": 3.61022,
+        "min": 1.84,
+        "max": 71860.2186
+      },
+      "KFVVQ": {
+        "default": 2.7,
+        "min": 30832.771,
+        "max": 9207.978
+      },
+      "D": {
+        "default": 88.6,
+        "min": 242.75104,
+        "max": 911.23372
+      },
+      "W": {
+        "default": 1628.1,
+        "min": 700.80219,
+        "max": 77.863
+      },
+      "NF": {
+        "default": 5.3848,
+        "min": 8.26,
+        "max": 56.67045
+      },
+      "netlist": {
+        "AR": "E",
+        "CJDOM": "OM",
+        "XT": "J"
+      }
+    }
+  ]
+}

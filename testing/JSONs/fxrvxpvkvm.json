@@ -1,0 +1,187 @@
+{
+  "id": "./JSONs/fxrvxpvkvm",
+  "components": [
+    {
+      "type": "uhmt",
+      "id": "ij",
+      "yjuq": {
+        "default": 127691.2007055,
+        "min": 434655.975886,
+        "max": 54.437
+      },
+      "jskuwih": {
+        "default": 1303348543.1930,
+        "min": 31209348.2197,
+        "max": 9209856.155157
+      },
+      "netlist": {
+        "qe": "hk",
+        "ewy": "uyfgjfx",
+        "rupm": "uyfgjfx",
+        "w": "rwfnsglonu",
+        "erq": "oxjreejx"
+      }
+    },
+    {
+      "type": "qspuijuwg",
+      "id": "lrhk",
+      "yiw": {
+        "default": 1591.28501251,
+        "min": 9.76353342,
+        "max": 20.799742287
+      },
+      "rijtsjx": {
+        "default": 9923.515805,
+        "min": 586172349.1022072024,
+        "max": 331.344
+      },
+      "hmjsonkg": {
+        "default": 592247962.78428546,
+        "min": 380136.110,
+        "max": 87944.399993612
+      },
+      "xwqrwuf": {
+        "default": 4870402.15317,
+        "min": 4.9480991715,
+        "max": 9139062607.8576193961
+      },
+      "efgsr": {
+        "default": 57529.791,
+        "min": 916729.9413,
+        "max": 9963505.7681964
+      },
+      "rokvyqj": {
+        "default": 53801.6402053723,
+        "min": 50.8939,
+        "max": 6904077.4633717288
+      },
+      "qoqmhmspwf": {
+        "default": 494627.789639587,
+        "min": 885830162.7,
+        "max": 8655.377
+      },
+      "xqtywkjrt": {
+        "default": 457519.5607,
+        "min": 1223.39668175,
+        "max": 2349614.267948
+      },
+      "rjmfsp": {
+        "default": 63.604,
+        "min": 8497133702.4943707481,
+        "max": 69.9600350080
+      },
+      "ugtrmlylj": {
+        "default": 296.180,
+        "min": 53613810.2669310,
+        "max": 554288.4890979
+      },
+      "netlist": {
+        "wrtvfuehgt": "mmllreq",
+        "xlxmxneq": "r",
+        "tkmwst": "r",
+        "qsjxjjewmj": "yqn",
+        "n": "lpvlme",
+        "p": "t",
+        "renje": "pknmwlhpe",
+        "suqqjrqu": "ueyholos"
+      }
+    },
+    {
+      "type": "qrgk",
+      "id": "qogn",
+      "e": {
+        "default": 14342.84765717,
+        "min": 6893220104.662890429,
+        "max": 524.9133661637
+      },
+      "hyex": {
+        "default": 356652.7691049,
+        "min": 4248639356.726444,
+        "max": 4268916427.8005965189
+      },
+      "mmxiywl": {
+        "default": 72706.26660,
+        "min": 61242370.5222,
+        "max": 7114.5242936
+      },
+      "irtxpwr": {
+        "default": 13706319.5,
+        "min": 174896.6742712044,
+        "max": 657055954.9146
+      },
+      "n": {
+        "default": 3054492.31,
+        "min": 180887.9253,
+        "max": 786.68903
+      },
+      "fwuoit": {
+        "default": 2.3821720,
+        "min": 785742240.9467897147,
+        "max": 9409056602.244
+      },
+      "jmmpwpkmlp": {
+        "default": 5102295.861990,
+        "min": 974.21,
+        "max": 3530120.33186882
+      },
+      "netlist": {
+        "y": "kppkrssp",
+        "erllxy": "ixtkhn",
+        "njhyvwm": "i",
+        "xwtltktqwu": "i",
+        "qqxxu": "hk"
+      }
+    },
+    {
+      "type": "jph",
+      "id": "ioheivj",
+      "nvxhiywfhh": {
+        "default": 19247678.6371521,
+        "min": 9342041.449494,
+        "max": 65.760960
+      },
+      "qv": {
+        "default": 62810773.6,
+        "min": 925838952.965544,
+        "max": 577247.3845749011
+      },
+      "ipg": {
+        "default": 290720.3880496,
+        "min": 622435798.8075335,
+        "max": 264991466.421
+      },
+      "netlist": {
+        "kpeshl": "lkyk",
+        "oqyw": "ixtkhn",
+        "yq": "lrjikl",
+        "fuxth": "moqimm",
+        "qphetefqy": "xeenijtx",
+        "npt": "i",
+        "r": "gyhmrms",
+        "ly": "kywovupij",
+        "wxukh": "r",
+        "pmq": "lq"
+      }
+    },
+    {
+      "type": "omu",
+      "id": "xfxyyksuf",
+      "pirljfh": {
+        "default": 4032238585.144,
+        "min": 53067.785786,
+        "max": 9976991920.7
+      },
+      "netlist": {
+        "omymlr": "shqvffqjx",
+        "rlqrqihnrl": "grwkpglims",
+        "xtw": "rwfnsglonu",
+        "gwqww": "tk",
+        "wthyu": "oqf",
+        "ug": "jlfjp",
+        "e": "shqvffqjx",
+        "muvjriru": "ljnshrg",
+        "ru": "qrxse"
+      }
+    }
+  ]
+}

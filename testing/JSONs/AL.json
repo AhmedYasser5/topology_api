@@ -1,0 +1,58 @@
+{
+  "id": "./JSONs/AL",
+  "components": [
+    {
+      "type": "TO",
+      "id": "ATD",
+      "N": {
+        "default": 20.50849,
+        "min": 3522.1027,
+        "max": 52.99370
+      },
+      "USK": {
+        "default": 96.49518,
+        "min": 55.37,
+        "max": 859.82589
+      },
+      "XCO": {
+        "default": 71916.9025,
+        "min": 72.200,
+        "max": 963.2
+      },
+      "netlist": {
+        "GO": "DIKFH",
+        "DALE": "KVR",
+        "GO": "AOO",
+        "LI": "FXVC"
+      }
+    },
+    {
+      "type": "OCT",
+      "id": "K",
+      "FN": {
+        "default": 232.6,
+        "min": 67.4058,
+        "max": 5.4
+      },
+      "netlist": {
+        "HPJON": "KRY",
+        "B": "H"
+      }
+    },
+    {
+      "type": "F",
+      "id": "S",
+      "V": {
+        "default": 47.7,
+        "min": 16367.97,
+        "max": 234.6464
+      },
+      "netlist": {
+        "JOSP": "WU",
+        "SXDK": "S",
+        "PF": "S",
+        "M": "QA"
+      }
+    }
+  ]
+}

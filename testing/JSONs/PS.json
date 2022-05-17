@@ -1,0 +1,47 @@
+{
+  "id": "./JSONs/PS",
+  "components": [
+    {
+      "type": "VJ",
+      "id": "I",
+      "V": {
+        "default": 609.3687,
+        "min": 12117.81,
+        "max": 23.2605
+      },
+      "netlist": {
+        "AR": "FB",
+        "WMUUD": "D",
+        "ROM": "FB"
+      }
+    },
+    {
+      "type": "HBAXM",
+      "id": "ORM",
+      "ME": {
+        "default": 8093.3735,
+        "min": 3.5,
+        "max": 87705.9
+      },
+      "VIDJ": {
+        "default": 56.60,
+        "min": 35.22,
+        "max": 99.111
+      },
+      "V": {
+        "default": 86159.85,
+        "min": 401.434,
+        "max": 1208.1
+      },
+      "N": {
+        "default": 74.54,
+        "min": 15.38,
+        "max": 1036.1984
+      },
+      "netlist": {
+        "ETVOM": "PZP",
+        "GFMWG": "DZTI"
+      }
+    }
+  ]
+}

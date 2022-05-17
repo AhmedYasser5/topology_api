@@ -1,0 +1,100 @@
+{
+  "id": "./JSONs/QTXX",
+  "components": [
+    {
+      "type": "CYFBY",
+      "id": "QYDWZ",
+      "Z": {
+        "default": 213.540,
+        "min": 174.19191,
+        "max": 50525.66645
+      },
+      "DS": {
+        "default": 2.47347,
+        "min": 200.6034,
+        "max": 2206.7
+      },
+      "netlist": {
+        "RSH": "YDCPD",
+        "ULBY": "EWHU",
+        "H": "EWH",
+        "H": "ES"
+      }
+    },
+    {
+      "type": "VY",
+      "id": "CKXX",
+      "DJ": {
+        "default": 25.97362,
+        "min": 504.1,
+        "max": 779.94005
+      },
+      "netlist": {
+        "ET": "STQ",
+        "RHYRV": "STQ"
+      }
+    },
+    {
+      "type": "QOHU",
+      "id": "VPGBF",
+      "B": {
+        "default": 6.7,
+        "min": 546.5,
+        "max": 662.8337
+      },
+      "netlist": {
+        "CAQHT": "ELCPN",
+        "BFCRU": "RUXWX",
+        "TXV": "AVUQ",
+        "LFYTH": "Y"
+      }
+    },
+    {
+      "type": "BC",
+      "id": "XL",
+      "QKHAT": {
+        "default": 1.27830,
+        "min": 2605.976,
+        "max": 2878.3
+      },
+      "netlist": {
+        "CA": "SJWFE",
+        "FLUW": "ZQEH"
+      }
+    },
+    {
+      "type": "BTTVK",
+      "id": "RGBE",
+      "MEIH": {
+        "default": 87753.26159,
+        "min": 8.185,
+        "max": 36.910
+      },
+      "HKN": {
+        "default": 33205.6707,
+        "min": 80.240,
+        "max": 48474.37
+      },
+      "COBX": {
+        "default": 30.8264,
+        "min": 948.66661,
+        "max": 146.22030
+      },
+      "NCX": {
+        "default": 99318.16179,
+        "min": 4.5482,
+        "max": 792.6060
+      },
+      "ILYEU": {
+        "default": 67670.52,
+        "min": 1.58,
+        "max": 3919.3
+      },
+      "netlist": {
+        "JPD": "KCZ",
+        "VQCN": "STQ",
+        "JI": "EUGH"
+      }
+    }
+  ]
+}

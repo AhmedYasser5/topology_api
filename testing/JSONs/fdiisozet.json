@@ -1,0 +1,38 @@
+{
+  "id": "./JSONs/fdiisozet",
+  "components": [
+    {
+      "type": "cpt",
+      "id": "nn",
+      "itcrkhhwyi": {
+        "default": 3667157984.7796,
+        "min": 2639908665.996,
+        "max": 806972.4904676340
+      },
+      "v": {
+        "default": 992.7136104,
+        "min": 6606.998380782,
+        "max": 18673551.7060
+      },
+      "qph": {
+        "default": 363293.2748795,
+        "min": 8098484536.4,
+        "max": 1221204.72146
+      },
+      "egmz": {
+        "default": 1.7482188,
+        "min": 7109894.59569,
+        "max": 1036.98628250
+      },
+      "netlist": {
+        "uc": "ua",
+        "sgw": "do",
+        "eqynql": "ua",
+        "s": "zvkusnxp",
+        "n": "mx",
+        "shwjzsvxdj": "umchmt",
+        "aztxiivjb": "kegpfmhmqi"
+      }
+    }
+  ]
+}
