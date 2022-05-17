@@ -1,1 +1,1 @@
-For compilation only, use `make`. However, for compilation and running, use `make run`.
+For compilation, use `make`. The library will be also compiled when the demo code or the testing code is compiled using make.
