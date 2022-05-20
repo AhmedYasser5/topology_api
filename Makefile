@@ -56,7 +56,9 @@ all : $(TARGET)
 
 .PHONY: run
 run : $(TARGET)
+	@echo ------------------------------------------------------
 	@LD_LIBRARY_PATH=$(LIBDIR):$$LD_LIBRARY_PATH $(TARGET)
+	@echo
 
 .PHONY: init
 init :
