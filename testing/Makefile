@@ -6,16 +6,14 @@ INCDIR := ./include
 OBJDIR := ./build/obj
 DEPDIR := ./build/deps
 BINDIR := .
+
 TARGET := $(BINDIR)/Testing_Topology_API.exe
+
 LIBDIR := ../lib
 LIB := TopologyAPI
 
-MY_PATHS := $(BINDIR) $(INCDIR)
+MY_PATHS := $(LIBDIR)/include $(BINDIR) $(INCDIR)
 MY_FLAGS := 
-
-###### extra variables #######
-MY_PATHS += $(shell cat .my_paths 2>/dev/null)
-MY_FLAGS += $(shell cat .my_flags 2>/dev/null)
 
 ###### complier set-up ######
 CC = gcc
@@ -43,6 +41,7 @@ else
 endif
 
 CFLAGS += -MMD -MP -I$(SRCDIR) $(foreach i,$(MY_PATHS),-I$(i))
+LDFLAGS += -L$(LIBDIR) -l$(LIB)
 
 SRCS := $(wildcard $(SRCDIR)/**/*.cpp)
 SRCS += $(wildcard $(SRCDIR)/*.cpp)
@@ -69,7 +68,7 @@ init :
 
 $(TARGET): $(OBJS)
 	-@echo LD $(maketype) "$(<D)/*.o" "->" $@ && \
-		$(LD) -o $@ $(OBJS) -L$(LIBDIR) -l$(LIB) $(LDFLAGS)
+		$(LD) -o $@ $(OBJS) $(LDFLAGS)
 
 $(OBJDIR)/%.cpp.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(OBJDIR) $(DEPDIR)
