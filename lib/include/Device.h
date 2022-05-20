@@ -13,15 +13,15 @@ using std::string;
 using std::vector;
 
 class Device : public Topology {
-protected:
+public:
   string type;
   vector<pair<string, string>> netlist;
   vector<pair<string, vector<pair<string, string>>>> properties;
 
+protected:
   void print_properties(ostream &s, int spaces) const;
   void print_netlist(ostream &s, int spaces) const;
 
-  friend class TopologyAPI;
   friend class TopologyTest;
 
 public:

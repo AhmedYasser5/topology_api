@@ -13,16 +13,16 @@ using std::string;
 using std::vector;
 
 class Topology {
-protected:
+public:
   string id;
   vector<shared_ptr<Topology>> components;
 
+protected:
   void print_attribute(ostream &s, int spaces, const string &name,
                        const string &attr) const;
   void print_components(ostream &s, int spaces) const;
   void print_spaces(ostream &s, int spaces) const;
 
-  friend class TopologyAPI;
   friend class TopologyTest;
 
 public:
