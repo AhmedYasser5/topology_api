@@ -52,10 +52,10 @@ DEPS := $(patsubst $(SRCDIR)/%,$(DEPDIR)/%.d,$(SRCS))
 OBJS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%.o,$(SRCS))
 
 .PHONY: all
-all : library $(TARGET)
+all : $(TARGET)
 
 .PHONY: run
-run : library $(TARGET)
+run : $(TARGET)
 	@LD_LIBRARY_PATH=$(LIBDIR):$$LD_LIBRARY_PATH $(TARGET)
 
 .PHONY: init
@@ -65,12 +65,6 @@ init :
 	-@for i in $(wildcard *.cpp) $(wildcard *.c) $(wildcard *.tpp); do mv ./$$i $(SRCDIR)/$$i; done
 	-@for i in $(wildcard *.h); do mv ./$$i $(INCDIR)/$$i; done
 	-@echo -e "-DDEBUG$(foreach i,$(MY_PATHS),\n-I../$(i)\n-I$(i))" >| src/.clang_complete
-
-.PHONY: library
-library :
-	@export RELEASE DEBUG
-	@$(MAKE) -C $(LIBDIR)
-	-@echo --------------------------------------------------
 
 $(TARGET): $(OBJS)
 	-@echo LD $(maketype) "$(<D)/*.o" "->" $@ && \
