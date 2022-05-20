@@ -1,3 +1,7 @@
-You can just compile the testing code that uses the library (like the one provided in src) using the Makefile provided. It should compile the library as well as the testing code.
+To get started, you need to compile the library into a shared library using the following command:
 
-For compilation only, use `make`. However, for compilation and running, use `make run`.
+```shell
+make -C lib
+```
+
+After that, you can run the testing code using `make run`, or just compile it using `make`.

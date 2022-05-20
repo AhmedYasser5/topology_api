@@ -18,6 +18,4 @@ To get started, you need to compile the library into a shared library using the 
 make -C lib
 ```
 
-You can also just compile the code that uses the library (like the one provided in src) using the Makefile provided. It should compile the library as well as the demo code.
-
-For compilation only, use `make`. However, for compilation and running, use `make run`.
+After that, you can run the demo code using `make run`, or just compile it using `make`.
