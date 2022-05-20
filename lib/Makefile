@@ -7,19 +7,17 @@ INCDIR := ./include
 OBJDIR := ./build/obj
 DEPDIR := ./build/deps
 BINDIR := .
+
 TARGET := TopologyAPI.so
+
 LIB := lib$(TARGET)
 
 MY_PATHS := $(BINDIR) $(INCDIR)
-MY_FLAGS := 
-
-###### extra variables #######
-MY_PATHS += $(shell cat .my_paths 2>/dev/null)
-MY_FLAGS += $(shell cat .my_flags 2>/dev/null)
+MY_FLAGS := -fPIC
 
 ###### complier set-up ######
 CC = gcc
-CFLAGS = $(MY_FLAGS) -fPIC -Wextra
+CFLAGS = $(MY_FLAGS) -Wextra
 CXX = g++
 CXXFLAGS = $(CFLAGS)
 LD = g++
