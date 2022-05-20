@@ -4,5 +4,5 @@ CXX NORMAL src/Device.cpp -> build/obj/Device.cpp.o
 CXX NORMAL src/Topology.cpp -> build/obj/Topology.cpp.o
 LD NORMAL build/obj/*.o -> libTopologyAPI.so
 scan-build: Analysis run complete.
-scan-build: Removing directory '/tmp/scan-build-2022-05-20-123721-3264-1' because it contains no reports.
+scan-build: Removing directory '/tmp/scan-build-2022-05-20-130359-8423-1' because it contains no reports.
 scan-build: No bugs found.
