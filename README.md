@@ -4,7 +4,7 @@
   1. C++ is one of the best programming languages when it comes to performance, and it is also an OOP language.
 	1. The standard template library along with smart pointers provided there are suitable for the requirements of the library.
 
-* The library is built using Makefiles into a static library.
+* The library is built using Makefiles into a shared library.
 * The documentation can be found in [wiki](http://github.com/AhmedYasser5/topology_api/wiki).
 
 ## Getting Started
