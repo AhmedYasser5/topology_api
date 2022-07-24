@@ -1,7 +1,6 @@
-
+-I../lib/include
 -I../../lib/include
--I../lib/include 
+-I.
 -I../.
--I. 
--I.././include
 -I./include
+-I.././include

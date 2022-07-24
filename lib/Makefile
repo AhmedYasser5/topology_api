@@ -1,5 +1,3 @@
-empty :=
-space := $(empty) $(empty)
 VERSION := 0
 
 SRCDIR := ./src
@@ -17,32 +15,20 @@ MY_FLAGS := -fPIC
 
 ###### complier set-up ######
 CC = gcc
-CFLAGS = $(MY_FLAGS) -Wextra
+CFLAGS = $(MY_FLAGS) -Wextra -Wno-unused-result
 CXX = g++
-CXXFLAGS = $(CFLAGS)
+CXXFLAGS = $(CFLAGS) -std=c++17
 LD = g++
 LDFLAGS = -shared -Wl,-soname,$(TARGET).$(VERSION) $(CXXFLAGS)
 DEBUGGER = gdb
 
-maketype :=
-
-ifeq ($(RELEASE), 1)
-	maketype += RELEASE
-	CFLAGS += -O3 -march=native
-	CXXFLAGS += -std=c++17
-	LDFLAGS += -flto=full
-else
-	maketype += DEBUG
-	CFLAGS += -O0 -g -DDEBUG=1
-	CXXFLAGS += -std=c++17
-endif
+CFLAGS += -O2 -ftree-vectorize -fomit-frame-pointer -march=native
+# Link Time Optimization
+CFLAGS += -flto
 
 CFLAGS += -MMD -MP -I$(SRCDIR) $(foreach i,$(MY_PATHS),-I$(i))
 
-SRCS := $(wildcard $(SRCDIR)/**/*.cpp)
-SRCS += $(wildcard $(SRCDIR)/*.cpp)
-SRCS += $(wildcard $(SRCDIR)/**/*.c)
-SRCS += $(wildcard $(SRCDIR)/*.c)
+SRCS := $(wildcard $(SRCDIR)/*.cpp)
 DEPS := $(patsubst $(SRCDIR)/%,$(DEPDIR)/%.d,$(SRCS))
 OBJS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%.o,$(SRCS))
 
@@ -54,8 +40,11 @@ init :
 	-@rm -rf build $(wildcard *.exe)
 	@mkdir -p $(SRCDIR) $(INCDIR) $(OBJDIR) $(DEPDIR)
 	-@for i in $(wildcard *.cpp) $(wildcard *.c) $(wildcard *.tpp); do mv ./$$i $(SRCDIR)/$$i; done
-	-@for i in $(wildcard *.h); do mv ./$$i $(INCDIR)/$$i; done
-	-@echo -e "$(foreach i,$(MY_PATHS),\n-I../$(i)\n-I$(i))" >| src/.clang_complete
+	-@for i in $(wildcard *.h) $(wildcard *.hpp); do mv ./$$i $(INCDIR)/$$i; done
+	-@$(file >$(SRCDIR)/.clang_complete)\
+		$(foreach i,$(MY_PATHS),\
+			$(file >>$(SRCDIR)/.clang_complete,-I$(i))\
+			$(file >>$(SRCDIR)/.clang_complete,-I../$(i)))
 
 $(LIB): $(OBJS)
 	@echo LD $(maketype) "$(<D)/*.o" "->" $@ && \
@@ -68,17 +57,12 @@ $(OBJDIR)/%.cpp.o: $(SRCDIR)/%.cpp
 	-@echo CXX $(maketype) $< "->" $@ && \
 		$(CXX) -c $< -o $@ -MF $(DEPDIR)/$(<F).d $(CXXFLAGS)
 
-$(OBJDIR)/%.c.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR) $(DEPDIR)
-	-@echo CC $(maketype) $< "->" $@ && \
-		$(CC) -c $< -o $@ -MF $(DEPDIR)/$(<F).d $(CFLAGS)
-
 .PHONY: clean
-clean: 
-	-$(RM) $(OBJS) $(DEPS) *$(TARGET)*
+clean : 
+	-$(RM) $(OBJS) $(DEPS) $(wildcard *$(TARGET)*)
 
 .PHONY: debug
-debug: $(TARGET)
+debug : $(TARGET)
 	$(DEBUGGER) $(TARGET)
 
 -include $(DEPS)
